@@ -1,0 +1,12 @@
+{
+    "AS": "AS4130", 
+    "ISP": "University of Pittsburgh", 
+    "city": "Pittsburgh", 
+    "country": "US", 
+    "hostname": "planetlab1.cs.pitt.edu", 
+    "ip": "192.52.240.213", 
+    "loc": "40.4344,-80.0248", 
+    "org": "AS4130 University of Pittsburgh", 
+    "postal": "15260", 
+    "region": "Pennsylvania"
+}

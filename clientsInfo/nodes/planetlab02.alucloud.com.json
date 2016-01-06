@@ -1,0 +1,12 @@
+{
+    "AS": "AS7345", 
+    "ISP": "Alcatel-Lucent", 
+    "city": "Boulogne-Billancourt", 
+    "country": "FR", 
+    "hostname": "planetlab02.alucloud.com", 
+    "ip": "135.109.221.104", 
+    "loc": "48.8333,2.2500", 
+    "org": "AS7345 Alcatel-Lucent", 
+    "postal": "92100", 
+    "region": "\u00cele-de-France"
+}

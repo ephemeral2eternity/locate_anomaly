@@ -1,0 +1,12 @@
+{
+    "AS": "AS2500", 
+    "ISP": "WIDE Project", 
+    "city": "Nagoya", 
+    "country": "JP", 
+    "hostname": "planetlab0.dojima.wide.ad.jp", 
+    "ip": "203.178.133.10", 
+    "loc": "35.1802,136.9067", 
+    "org": "AS2500 WIDE Project", 
+    "postal": "460-0001", 
+    "region": "Aichi"
+}

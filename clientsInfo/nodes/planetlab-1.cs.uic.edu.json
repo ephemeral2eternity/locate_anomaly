@@ -1,0 +1,12 @@
+{
+    "AS": "AS6200", 
+    "ISP": "University of Illinois at Chicago", 
+    "city": "Chicago", 
+    "country": "US", 
+    "hostname": "planetlab-1.cs.uic.edu", 
+    "ip": "131.193.34.21", 
+    "loc": "41.8784,-87.6852", 
+    "org": "AS6200 University of Illinois at Chicago", 
+    "postal": "60612", 
+    "region": "Illinois"
+}

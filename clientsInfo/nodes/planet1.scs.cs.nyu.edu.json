@@ -1,0 +1,12 @@
+{
+    "AS": "AS12", 
+    "ISP": "New York University", 
+    "city": "New York", 
+    "country": "US", 
+    "hostname": "planet1.scs.cs.nyu.edu", 
+    "ip": "216.165.109.81", 
+    "loc": "40.7317,-73.9885", 
+    "org": "AS12 New York University", 
+    "postal": "10003", 
+    "region": "New York"
+}

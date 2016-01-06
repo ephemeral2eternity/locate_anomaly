@@ -1,0 +1,12 @@
+{
+    "AS": "AS73", 
+    "ISP": "University of Washington", 
+    "city": "Seattle", 
+    "country": "US", 
+    "hostname": "planetlab01.cs.washington.edu", 
+    "ip": "128.208.4.197", 
+    "loc": "47.6606,-122.2919", 
+    "org": "AS73 University of Washington", 
+    "postal": "98105", 
+    "region": "Washington"
+}

@@ -1,0 +1,12 @@
+{
+    "AS": "AS88", 
+    "ISP": "Princeton University", 
+    "city": "Princeton", 
+    "country": "US", 
+    "hostname": "planetlab-03.CS.Princeton.EDU", 
+    "ip": "128.112.139.97", 
+    "loc": "40.3756,-74.6597", 
+    "org": "AS88 Princeton University", 
+    "postal": "08540", 
+    "region": "New Jersey"
+}

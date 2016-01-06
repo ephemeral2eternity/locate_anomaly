@@ -1,0 +1,12 @@
+{
+    "AS": "AS30", 
+    "ISP": "SRI International", 
+    "city": "Pittsburgh", 
+    "country": "US", 
+    "hostname": "pl-node-1.csl.sri.com", 
+    "ip": "192.12.33.102", 
+    "loc": "40.4439,-79.9561", 
+    "org": "AS30 SRI International", 
+    "postal": "15213", 
+    "region": "Pennsylvania"
+}

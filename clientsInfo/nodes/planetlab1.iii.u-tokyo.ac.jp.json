@@ -1,0 +1,12 @@
+{
+    "AS": "AS2501", 
+    "ISP": "The University of Tokyo", 
+    "city": "Tokyo", 
+    "country": "JP", 
+    "hostname": "planetlab1.iii.u-tokyo.ac.jp", 
+    "ip": "133.11.240.56", 
+    "loc": "35.6850,139.7514", 
+    "org": "AS2501 The University of Tokyo", 
+    "postal": "100-0001", 
+    "region": "Tokyo"
+}

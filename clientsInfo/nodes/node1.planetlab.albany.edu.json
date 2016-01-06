@@ -1,0 +1,12 @@
+{
+    "AS": "AS22990", 
+    "ISP": "The University at Albany", 
+    "city": "Albany", 
+    "country": "US", 
+    "hostname": "node1.planetlab.albany.edu", 
+    "ip": "169.226.40.2", 
+    "loc": "42.6929,-73.8380", 
+    "org": "AS22990 The University at Albany", 
+    "postal": "12222", 
+    "region": "New York"
+}

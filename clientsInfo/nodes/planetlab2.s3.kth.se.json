@@ -1,0 +1,12 @@
+{
+    "AS": "AS1653", 
+    "ISP": "SUNET Swedish University Network", 
+    "city": "Lidingoe", 
+    "country": "SE", 
+    "hostname": "planetlab2.s3.kth.se", 
+    "ip": "130.237.50.125", 
+    "loc": "59.3667,18.1333", 
+    "org": "AS1653 SUNET Swedish University Network", 
+    "postal": "181 10", 
+    "region": "Stockholm"
+}

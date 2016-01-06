@@ -1,0 +1,12 @@
+{
+    "AS": "AS2200", 
+    "ISP": "Reseau National de telecommunications pour la Technologie", 
+    "city": "Troyes", 
+    "country": "FR", 
+    "hostname": "planetlab2.utt.fr", 
+    "ip": "194.254.215.12", 
+    "loc": "48.3000,4.0833", 
+    "org": "AS2200 Reseau National de telecommunications pour la Technologie", 
+    "postal": "10000", 
+    "region": "Champagne-Ardenne"
+}

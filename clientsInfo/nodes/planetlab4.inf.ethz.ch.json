@@ -1,0 +1,12 @@
+{
+    "AS": "AS559", 
+    "ISP": "SWITCH", 
+    "city": "Zurich", 
+    "country": "CH", 
+    "hostname": "planetlab4.ethz.ch", 
+    "ip": "192.33.90.69", 
+    "loc": "47.3667,8.5500", 
+    "org": "AS559 SWITCH", 
+    "postal": "8010", 
+    "region": "Zurich"
+}

@@ -1,0 +1,12 @@
+{
+    "AS": "AS224", 
+    "ISP": "UNINETT AS", 
+    "city": "Oslo", 
+    "country": "NO", 
+    "hostname": "planetlab1.ifi.uio.no", 
+    "ip": "193.157.115.250", 
+    "loc": "59.9127,10.7461", 
+    "org": "AS224 UNINETT AS", 
+    "postal": "0001", 
+    "region": "Oslo County"
+}

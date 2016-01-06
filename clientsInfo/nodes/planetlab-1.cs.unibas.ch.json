@@ -1,0 +1,12 @@
+{
+    "AS": "AS559", 
+    "ISP": "SWITCH", 
+    "city": "Basel", 
+    "country": "CH", 
+    "hostname": "planetlab-1.cs.unibas.ch", 
+    "ip": "192.43.193.71", 
+    "loc": "47.5592,7.5788", 
+    "org": "AS559 SWITCH", 
+    "postal": "4003", 
+    "region": "Basel-City"
+}

@@ -1,0 +1,12 @@
+{
+    "AS": "AS559", 
+    "ISP": "SWITCH", 
+    "city": "Neuchatel", 
+    "country": "CH", 
+    "hostname": "planetlab2.unineuchatel.ch", 
+    "ip": "192.42.43.23", 
+    "loc": "47.0009,6.9274", 
+    "org": "AS559 SWITCH", 
+    "postal": "2000", 
+    "region": "Neuch\u00e2tel"
+}

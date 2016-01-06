@@ -1,0 +1,12 @@
+{
+    "AS": "AS2200", 
+    "ISP": "Reseau National de telecommunications pour la Technologie", 
+    "city": "Nancy", 
+    "country": "FR", 
+    "hostname": "host4-plb.loria.fr", 
+    "ip": "152.81.47.5", 
+    "loc": "48.6844,6.1850", 
+    "org": "AS2200 Reseau National de telecommunications pour la Technologie", 
+    "postal": "54000", 
+    "region": "Lorraine"
+}

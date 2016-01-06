@@ -1,0 +1,12 @@
+{
+    "AS": "AS111", 
+    "ISP": "Boston University", 
+    "city": "Boston", 
+    "country": "US", 
+    "hostname": "planetlab-02.bu.edu", 
+    "ip": "204.8.155.227", 
+    "loc": "42.3451,-71.0993", 
+    "org": "AS111 Boston University", 
+    "postal": "02215", 
+    "region": "Massachusetts"
+}

@@ -1,0 +1,12 @@
+{
+    "AS": "AS20", 
+    "ISP": "University of Rochester", 
+    "city": "Rochester", 
+    "country": "US", 
+    "hostname": "planet1.cs.rochester.edu", 
+    "ip": "128.151.65.101", 
+    "loc": "43.1548,-77.6156", 
+    "org": "AS20 University of Rochester", 
+    "postal": "14627", 
+    "region": "New York"
+}

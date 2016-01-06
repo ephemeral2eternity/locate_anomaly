@@ -1,0 +1,12 @@
+{
+    "AS": "AS9431", 
+    "ISP": "The University of Auckland", 
+    "city": "Auckland", 
+    "country": "NZ", 
+    "hostname": "planetlab-1.cs.auckland.ac.nz", 
+    "ip": "130.216.1.22", 
+    "loc": "-36.8641,174.7621", 
+    "org": "AS9431 The University of Auckland", 
+    "postal": "1010", 
+    "region": "Auckland"
+}

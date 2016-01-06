@@ -1,0 +1,12 @@
+{
+    "AS": "AS8", 
+    "ISP": "Rice University", 
+    "city": "Houston", 
+    "country": "US", 
+    "hostname": "ricepl-2.cs.rice.edu", 
+    "ip": "128.42.142.42", 
+    "loc": "29.7176,-95.4188", 
+    "org": "AS8 Rice University", 
+    "postal": "77005", 
+    "region": "Texas"
+}

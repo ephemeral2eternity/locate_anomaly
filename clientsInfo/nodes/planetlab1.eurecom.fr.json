@@ -1,0 +1,12 @@
+{
+    "AS": "AS2200", 
+    "ISP": "Reseau National de telecommunications pour la Technologie", 
+    "city": "Perpignan", 
+    "country": "FR", 
+    "hostname": "planetlab1.eurecom.fr", 
+    "ip": "193.55.112.40", 
+    "loc": "42.6976,2.8954", 
+    "org": "AS2200 Reseau National de telecommunications pour la Technologie", 
+    "postal": "66000", 
+    "region": "Languedoc-Roussillon"
+}

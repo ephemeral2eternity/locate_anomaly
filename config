@@ -1,0 +1,3 @@
+## Configure the folder for the tracefile logs
+QoE_FOLDER=data/qoe/
+TR_FOLDER=data/tr/

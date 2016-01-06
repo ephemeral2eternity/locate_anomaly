@@ -1,0 +1,1902 @@
+{
+    "AS103": {
+        "ISP": "Northwestern University", 
+        "users": [
+            "planetlab1.eecs.northwestern.edu", 
+            "planetlab2.eecs.northwestern.edu", 
+            "planetlab3.eecs.northwestern.edu"
+        ]
+    }, 
+    "AS10326": {
+        "ISP": "Worcester Polytechnic Institute", 
+        "users": [
+            "75-130-96-12.static.oxfr.ma.charter.com", 
+            "75-130-96-13.static.oxfr.ma.charter.com"
+        ]
+    }, 
+    "AS104": {
+        "ISP": "University of Colorado at Boulder", 
+        "users": [
+            "planetlab1.cs.colorado.edu", 
+            "planetlab2.cs.colorado.edu"
+        ]
+    }, 
+    "AS10421": {
+        "ISP": "Texas Tech University", 
+        "users": [
+            "ttu1-1.nodes.planet-lab.org", 
+            "ttu2-1.nodes.planet-lab.org"
+        ]
+    }, 
+    "AS10437": {
+        "ISP": "University of Kentucky, Communication Services", 
+        "users": [
+            "planetlab1.netlab.uky.edu", 
+            "planetlab2.netlab.uky.edu"
+        ]
+    }, 
+    "AS10881": {
+        "ISP": "FUNPAR - Fundacao da UFPR para o DCTC", 
+        "users": [
+            "planetlab1.c3sl.ufpr.br", 
+            "planetlab2.c3sl.ufpr.br"
+        ]
+    }, 
+    "AS1103": {
+        "ISP": "SURFnet, The Netherlands", 
+        "users": [
+            "planetlab1.cs.vu.nl", 
+            "planetlab2.cs.vu.nl"
+        ]
+    }, 
+    "AS11050": {
+        "ISP": "Kent State University", 
+        "users": [
+            "pl1.planet.cs.kent.edu", 
+            "pl2.planet.cs.kent.edu", 
+            "pl3.planet.cs.kent.edu"
+        ]
+    }, 
+    "AS11078": {
+        "ISP": "Brown University", 
+        "users": [
+            "earth.cs.brown.edu", 
+            "jupiter.cs.brown.edu", 
+            "pluto.cs.brown.edu"
+        ]
+    }, 
+    "AS111": {
+        "ISP": "Boston University", 
+        "users": [
+            "planetlab-01.bu.edu", 
+            "planetlab-02.bu.edu"
+        ]
+    }, 
+    "AS11105": {
+        "ISP": "Simon Fraser University", 
+        "users": [
+            "cs-planetlab3.cs.surrey.sfu.ca", 
+            "cs-planetlab4.cs.surrey.sfu.ca"
+        ]
+    }, 
+    "AS11279": {
+        "ISP": "George Mason University", 
+        "users": [
+            "plgmu1.ite.gmu.edu", 
+            "plgmu2.ite.gmu.edu", 
+            "plgmu3.ite.gmu.edu", 
+            "plgmu4.ite.gmu.edu"
+        ]
+    }, 
+    "AS11399": {
+        "ISP": "Williams College Center for Computing", 
+        "users": [
+            "planetlab2.williams.edu", 
+            "planetlab3.williams.edu", 
+            "planetlab4.williams.edu", 
+            "planetlab5.williams.edu"
+        ]
+    }, 
+    "AS11488": {
+        "ISP": "BBN Technologies Corp.", 
+        "users": [
+            "plnode-03.gpolab.bbn.com", 
+            "plnode-04.gpolab.bbn.com"
+        ]
+    }, 
+    "AS11557": {
+        "ISP": "Sidera Networks LLC", 
+        "users": [
+            "planetlab3.georgetown.edu", 
+            "planetlab4.georgetown.edu"
+        ]
+    }, 
+    "AS12": {
+        "ISP": "New York University", 
+        "users": [
+            "planet1.scs.cs.nyu.edu", 
+            "planetx.scs.cs.nyu.edu"
+        ]
+    }, 
+    "AS12093": {
+        "ISP": "University of Waterloo", 
+        "users": [
+            "plink.cs.uwaterloo.ca", 
+            "plonk.cs.uwaterloo.ca"
+        ]
+    }, 
+    "AS1213": {
+        "ISP": "HEAnet Limited", 
+        "users": [
+            "planetlab-coffee.ait.ie", 
+            "planetlab-node-01.ucd.ie", 
+            "planetlab-node-02.ucd.ie", 
+            "planetlab-tea.ait.ie", 
+            "planetlabeu-1.tssg.org", 
+            "planetlabeu-2.tssg.org"
+        ]
+    }, 
+    "AS12145": {
+        "ISP": "Colorado State University", 
+        "users": [
+            "planetlab-2.cs.colostate.edu"
+        ]
+    }, 
+    "AS12148": {
+        "ISP": "Clemson University", 
+        "users": [
+            "planetlab1.clemson.edu", 
+            "planetlab2.clemson.edu"
+        ]
+    }, 
+    "AS12464": {
+        "ISP": "Politechnika Warszawska", 
+        "users": [
+            "planetlab1.mini.pw.edu.pl", 
+            "planetlab2.mini.pw.edu.pl", 
+            "planetlab3.mini.pw.edu.pl", 
+            "planetlab4.mini.pw.edu.pl"
+        ]
+    }, 
+    "AS1249": {
+        "ISP": "Five Colleges Network", 
+        "users": [
+            "planetlab1.cs.umass.edu", 
+            "planetlab2.cs.umass.edu"
+        ]
+    }, 
+    "AS12816": {
+        "ISP": "Leibniz-Rechenzentrum", 
+        "users": [
+            "planetlab1.net.in.tum.de", 
+            "planetlab3.net.in.tum.de"
+        ]
+    }, 
+    "AS1289": {
+        "ISP": "Colgate University", 
+        "users": [
+            "ebb.colgate.edu"
+        ]
+    }, 
+    "AS12910": {
+        "ISP": "", 
+        "users": [
+            "planetlab1.thlab.net", 
+            "planetlab2.thlab.net"
+        ]
+    }, 
+    "AS12925": {
+        "ISP": "SINP MSU", 
+        "users": [
+            "plab-1.sinp.msu.ru", 
+            "plab-2.sinp.msu.ru"
+        ]
+    }, 
+    "AS13041": {
+        "ISP": "Consorci de Serveis Universitaris de Catalunya", 
+        "users": [
+            "aguila1.lsi.upc.edu", 
+            "aguila2.lsi.upc.edu", 
+            "dplanet1.uoc.edu", 
+            "dplanet2.uoc.edu", 
+            "planetlab1.upc.es", 
+            "planetlab2.upc.es", 
+            "planetlab3.upc.es"
+        ]
+    }, 
+    "AS1307": {
+        "ISP": "FR-U-JUSSIEU-PARIS", 
+        "users": [
+            "ampelos.ipv6.lip6.fr", 
+            "anateus.ipv6.lip6.fr", 
+            "empusa.ipv6.lip6.fr", 
+            "ple2.ipv6.lip6.fr", 
+            "ple3.ipv6.lip6.fr", 
+            "ple4.ipv6.lip6.fr", 
+            "ple6.ipv6.lip6.fr", 
+            "plewifi.ipv6.lip6.fr", 
+            "sybaris.ipv6.lip6.fr"
+        ]
+    }, 
+    "AS131": {
+        "ISP": "University of California, Santa Barbara", 
+        "users": [
+            "planet3.cs.ucsb.edu", 
+            "planet4.cs.ucsb.edu", 
+            "planet5.cs.ucsb.edu", 
+            "planet6.cs.ucsb.edu"
+        ]
+    }, 
+    "AS1312": {
+        "ISP": "Virginia Polytechnic Institute and State Univ.", 
+        "users": [
+            "planetlab-01.vt.nodes.planet-lab.org", 
+            "planetlab-02.vt.nodes.planet-lab.org", 
+            "planetlab-03.vt.nodes.planet-lab.org", 
+            "planetlab-04.vt.nodes.planet-lab.org"
+        ]
+    }, 
+    "AS13193": {
+        "ISP": "Nerim SAS", 
+        "users": [
+            "pl1.tailab.eu", 
+            "pl2.tailab.eu", 
+            "planetlab1.jcp-consult.net", 
+            "planetlab2.jcp-consult.net"
+        ]
+    }, 
+    "AS13371": {
+        "ISP": "Duke University", 
+        "users": [
+            "planetlab2.cs.duke.edu", 
+            "planetlab4.cs.duke.edu", 
+            "planetlab5.cs.duke.edu", 
+            "planetlab6.cs.duke.edu", 
+            "planetlab7.cs.duke.edu"
+        ]
+    }, 
+    "AS13476": {
+        "ISP": "Montana State University - Billings", 
+        "users": [
+            "pl1.cs.montana.edu", 
+            "pl2.cs.montana.edu"
+        ]
+    }, 
+    "AS137": {
+        "ISP": "Consortium GARR", 
+        "users": [
+            "gschembra3.diit.unict.it", 
+            "gschembra4.diit.unict.it", 
+            "marie.iet.unipi.it", 
+            "onelab6.iet.unipi.it", 
+            "onelab7.iet.unipi.it", 
+            "plab-1.diegm.uniud.it", 
+            "plab-2.diegm.uniud.it", 
+            "planet-lab-node1.netgroup.uniroma2.it", 
+            "planet-lab-node2.netgroup.uniroma2.it", 
+            "planet1.unipr.it", 
+            "planet2.unipr.it", 
+            "planetlab-1.ing.unimo.it", 
+            "planetlab-2.ing.unimo.it", 
+            "planetlab-4.dis.uniroma1.it", 
+            "planetlab02.dis.unina.it", 
+            "planetlab1.di.unito.it", 
+            "planetlab1.polito.it", 
+            "planetlab1.science.unitn.it", 
+            "planetlab2.di.unito.it", 
+            "planetlab2.polito.it", 
+            "planetlab2.science.unitn.it", 
+            "planetlab3.di.unito.it"
+        ]
+    }, 
+    "AS13796": {
+        "ISP": "University of Connecticut", 
+        "users": [
+            "planetlab1.engr.uconn.edu", 
+            "planetlab2.engr.uconn.edu"
+        ]
+    }, 
+    "AS14": {
+        "ISP": "Columbia University", 
+        "users": [
+            "planetlab1.cs.columbia.edu", 
+            "planetlab2.cs.columbia.edu", 
+            "planetlab3.cs.columbia.edu"
+        ]
+    }, 
+    "AS14041": {
+        "ISP": "University Corporation for Atmospheric Research", 
+        "users": [
+            "planetlab1.cs.du.edu", 
+            "planetlab2.cs.du.edu"
+        ]
+    }, 
+    "AS15474": {
+        "ISP": "Rannsokna- og haskolanet Islands hf.", 
+        "users": [
+            "planetlab1.ru.is", 
+            "planetlab2.ru.is"
+        ]
+    }, 
+    "AS156": {
+        "ISP": "Northeastern University", 
+        "users": [
+            "planetlabone.ccs.neu.edu", 
+            "planetlabtwo.ccs.neu.edu"
+        ]
+    }, 
+    "AS159": {
+        "ISP": "The Ohio State University", 
+        "users": [
+            "planetlab-1.cse.ohio-state.edu", 
+            "planetlab-2.cse.ohio-state.edu"
+        ]
+    }, 
+    "AS16086": {
+        "ISP": "DNA Oy", 
+        "users": [
+            "planetlab1.virtues.fi", 
+            "planetlab2.virtues.fi"
+        ]
+    }, 
+    "AS1653": {
+        "ISP": "SUNET Swedish University Network", 
+        "users": [
+            "planetlab1.s3.kth.se", 
+            "planetlab2.s3.kth.se"
+        ]
+    }, 
+    "AS1659": {
+        "ISP": "Taiwan Academic Network (TANet) Information Center", 
+        "users": [
+            "planetlab1.csie.nuk.edu.tw", 
+            "planetlab2.csie.nuk.edu.tw"
+        ]
+    }, 
+    "AS17": {
+        "ISP": "Purdue University", 
+        "users": [
+            "planetlab1.cs.purdue.edu", 
+            "planetlab2.cs.purdue.edu"
+        ]
+    }, 
+    "AS17055": {
+        "ISP": "University of Utah", 
+        "users": [
+            "planetlab6.flux.utah.edu", 
+            "planetlab7.flux.utah.edu"
+        ]
+    }, 
+    "AS1706": {
+        "ISP": "University of Arizona", 
+        "users": [
+            "planetlab1.arizona-gigapop.net", 
+            "planetlab2.arizona-gigapop.net", 
+            "planetlab3.arizona-gigapop.net"
+        ]
+    }, 
+    "AS1741": {
+        "ISP": "CSC - Tieteen tietotekniikan keskus Oy", 
+        "users": [
+            "planetlab-1.research.netlab.hut.fi", 
+            "planetlab-2.research.netlab.hut.fi", 
+            "planetlab1.hiit.fi", 
+            "planetlab1.rd.tut.fi", 
+            "planetlab2.hiit.fi", 
+            "planetlab2.rd.tut.fi", 
+            "planetlab3.hiit.fi", 
+            "planetlab4.hiit.fi"
+        ]
+    }, 
+    "AS1742": {
+        "ISP": "Harvard University", 
+        "users": [
+            "lefthand.eecs.harvard.edu", 
+            "righthand.eecs.harvard.edu"
+        ]
+    }, 
+    "AS17557": {
+        "ISP": "Pakistan Telecommunication Company Limited", 
+        "users": [
+            "planetlab01.lums.edu.pk", 
+            "planetlab02.lums.edu.pk"
+        ]
+    }, 
+    "AS17716": {
+        "ISP": "National Taiwan University", 
+        "users": [
+            "planetlab1.ntu.nodes.planet-lab.org", 
+            "planetlab2.ntu.nodes.planet-lab.org"
+        ]
+    }, 
+    "AS1781": {
+        "ISP": "Korea Advanced Institute of Science and Technology", 
+        "users": [
+            "csplanetlab3.kaist.ac.kr", 
+            "csplanetlab4.kaist.ac.kr"
+        ]
+    }, 
+    "AS17932": {
+        "ISP": "Japan Advanced Institute of Science and Technology", 
+        "users": [
+            "planet0.jaist.ac.jp", 
+            "planet1.jaist.ac.jp"
+        ]
+    }, 
+    "AS17956": {
+        "ISP": "WASEDA University", 
+        "users": [
+            "planetlab4.goto.info.waseda.ac.jp", 
+            "planetlab5.goto.info.waseda.ac.jp", 
+            "planetlab6.goto.info.waseda.ac.jp"
+        ]
+    }, 
+    "AS18047": {
+        "ISP": "National Tsing-Hua University", 
+        "users": [
+            "cs743.cs.nthu.edu.tw", 
+            "cs744.cs.nthu.edu.tw"
+        ]
+    }, 
+    "AS18176": {
+        "ISP": "KOOKMIN UNIVERSITY", 
+        "users": [
+            "netapp6.cs.kookmin.ac.kr", 
+            "netapp7.cs.kookmin.ac.kr"
+        ]
+    }, 
+    "AS1835": {
+        "ISP": "Forskningsnettet - Danish network for Research and Education", 
+        "users": [
+            "planetlab1.diku.dk", 
+            "planetlab2.diku.dk"
+        ]
+    }, 
+    "AS18420": {
+        "ISP": "National Central University", 
+        "users": [
+            "nw142.csie.ncu.edu.tw"
+        ]
+    }, 
+    "AS18515": {
+        "ISP": "University of Texas at Arlington", 
+        "users": [
+            "planetlab1.uta.edu", 
+            "planetlab2.uta.edu"
+        ]
+    }, 
+    "AS1888": {
+        "ISP": "Stichting Centrum voor Wiskunde en Informatica", 
+        "users": [
+            "plan1.project.cwi.nl"
+        ]
+    }, 
+    "AS1916": {
+        "ISP": "Associa\u00e7\u00e3o Rede Nacional de Ensino e Pesquisa", 
+        "users": [
+            "planetlab1.pop-ce.rnp.br", 
+            "planetlab1.pop-mg.rnp.br", 
+            "planetlab1.pop-pa.rnp.br", 
+            "planetlab1.pop-rj.rnp.br", 
+            "planetlab2.pop-ce.rnp.br", 
+            "planetlab2.pop-mg.rnp.br", 
+            "planetlab2.pop-pa.rnp.br", 
+            "planetlab2.pop-rj.rnp.br"
+        ]
+    }, 
+    "AS1930": {
+        "ISP": "Fundacao para a Ciencia e a Tecnologia, I.P.", 
+        "users": [
+            "planet1.servers.ua.pt", 
+            "planet2.servers.ua.pt", 
+            "planetlab-1.di.fc.ul.pt", 
+            "planetlab-1.iscte.pt", 
+            "planetlab-1.tagus.ist.utl.pt", 
+            "planetlab-2.di.fc.ul.pt", 
+            "planetlab-2.tagus.ist.utl.pt", 
+            "planetlab-3.iscte.pt", 
+            "planetlab-4.iscte.pt", 
+            "planetlab-um00.di.uminho.pt", 
+            "planetlab-um10.di.uminho.pt", 
+            "planetlab1.fct.ualg.pt", 
+            "planetlab2.di.fct.unl.pt", 
+            "planetlab2.fct.ualg.pt"
+        ]
+    }, 
+    "AS1938": {
+        "ISP": "Irisa/Inria Rennes", 
+        "users": [
+            "inriarennes1.irisa.fr", 
+            "inriarennes2.irisa.fr", 
+            "peeramide.irisa.fr", 
+            "peeramidion.irisa.fr"
+        ]
+    }, 
+    "AS1942": {
+        "ISP": "Toile Informatique GREnobloise", 
+        "users": [
+            "planetlab-1.imag.fr", 
+            "planetlab-2.imag.fr"
+        ]
+    }, 
+    "AS1968": {
+        "ISP": "University of Massachusettes", 
+        "users": [
+            "planetlab1.cs.umb.edu", 
+            "planetlab1.umassd.edu", 
+            "planetlab2.cs.umb.edu"
+        ]
+    }, 
+    "AS197451": {
+        "ISP": "Brno University of Technology", 
+        "users": [
+            "planetlab1.fit.vutbr.cz"
+        ]
+    }, 
+    "AS198864": {
+        "ISP": "Queen Mary and Westfield College, University of London", 
+        "users": [
+            "planetlab1.nrl.eecs.qmul.ac.uk", 
+            "planetlab2.nrl.eecs.qmul.ac.uk"
+        ]
+    }, 
+    "AS19956": {
+        "ISP": "BellSouth.net Inc.", 
+        "users": [
+            "planetlab1.tsuniv.edu", 
+            "planetlab2.tsuniv.edu"
+        ]
+    }, 
+    "AS19957": {
+        "ISP": "BellSouth.net Inc.", 
+        "users": [
+            "pl1.eecs.utk.edu", 
+            "pl2.eecs.utk.edu"
+        ]
+    }, 
+    "AS199578": {
+        "ISP": "Technische Universitaet Kaiserslautern", 
+        "users": [
+            "planetlab1.informatik.uni-kl.de", 
+            "planetlab2.informatik.uni-kl.de"
+        ]
+    }, 
+    "AS20": {
+        "ISP": "University of Rochester", 
+        "users": [
+            "planet1.cs.rochester.edu", 
+            "planet2.cs.rochester.edu"
+        ]
+    }, 
+    "AS2012": {
+        "ISP": "ELTENET", 
+        "users": [
+            "planet1.elte.hu", 
+            "planet2.elte.hu"
+        ]
+    }, 
+    "AS20143": {
+        "ISP": "Suffolk University", 
+        "users": [
+            "adrastea.mcs.suffolk.edu", 
+            "metis.mcs.suffolk.edu"
+        ]
+    }, 
+    "AS20162": {
+        "ISP": "University of Texas at Dallas", 
+        "users": [
+            "planetlab1.utdallas.edu", 
+            "planetlab2.utdallas.edu"
+        ]
+    }, 
+    "AS2094": {
+        "ISP": "Telecom & Management Sud Paris", 
+        "users": [
+            "planetlab-node1.it-sudparis.eu", 
+            "planetlab-node3.it-sudparis.eu"
+        ]
+    }, 
+    "AS2107": {
+        "ISP": "ARNES", 
+        "users": [
+            "planetlab-12.e5.ijs.si", 
+            "planetlab-13.e5.ijs.si", 
+            "planetlab1.fri.uni-lj.si", 
+            "planetlab2.fri.uni-lj.si"
+        ]
+    }, 
+    "AS2152": {
+        "ISP": "California State University, Office of the Chancellor", 
+        "users": [
+            "plab1.engr.sjsu.edu", 
+            "plab2.engr.sjsu.edu", 
+            "planetlab0.ias.csusb.edu"
+        ]
+    }, 
+    "AS2200": {
+        "ISP": "Reseau National de telecommunications pour la Technologie", 
+        "users": [
+            "host3-plb.loria.fr", 
+            "host4-plb.loria.fr", 
+            "node1pl.planet-lab.telecom-lille1.eu", 
+            "node2pl.planet-lab.telecom-lille1.eu", 
+            "planetlab1.eurecom.fr", 
+            "planetlab1.utt.fr", 
+            "planetlab2.eurecom.fr", 
+            "planetlab2.utt.fr"
+        ]
+    }, 
+    "AS224": {
+        "ISP": "UNINETT AS", 
+        "users": [
+            "planetlab1.cs.uit.no", 
+            "planetlab1.ifi.uio.no", 
+            "planetlab1.simula.no", 
+            "planetlab2.cs.uit.no", 
+            "planetlab2.ifi.uio.no"
+        ]
+    }, 
+    "AS225": {
+        "ISP": "University of Virginia", 
+        "users": [
+            "planetlab01.sys.virginia.edu", 
+            "planetlab02.sys.virginia.edu"
+        ]
+    }, 
+    "AS2259": {
+        "ISP": "OSIRIS - UNIVERSITE DE STRASBOURG", 
+        "users": [
+            "planetlab1.u-strasbg.fr", 
+            "planetlab2.u-strasbg.fr"
+        ]
+    }, 
+    "AS2278": {
+        "ISP": "Orange S.A.", 
+        "users": [
+            "planetlab1lannion.elibel.tm.fr", 
+            "planetlab2lannion.elibel.tm.fr"
+        ]
+    }, 
+    "AS22950": {
+        "ISP": "University of Saskatchewan", 
+        "users": [
+            "planetlab-1.usask.ca", 
+            "planetlab-2.usask.ca"
+        ]
+    }, 
+    "AS22990": {
+        "ISP": "The University at Albany", 
+        "users": [
+            "node1.planetlab.albany.edu"
+        ]
+    }, 
+    "AS237": {
+        "ISP": "Merit Network Inc.", 
+        "users": [
+            "mtuplanetlab1.cs.mtu.edu", 
+            "mtuplanetlab2.cs.mtu.edu", 
+            "planetlab1.cs.wayne.edu"
+        ]
+    }, 
+    "AS23855": {
+        "ISP": "Singapore Advanced Research and Education Network", 
+        "users": [
+            "planetlab1.singaren.net.sg", 
+            "planetlab2.singaren.net.sg", 
+            "planetlab3.singaren.net.sg", 
+            "planetlab4.singaren.net.sg", 
+            "pnode1.pdcc-ntu.singaren.net.sg", 
+            "pnode2.pdcc-ntu.singaren.net.sg"
+        ]
+    }, 
+    "AS239": {
+        "ISP": "University of Toronto", 
+        "users": [
+            "pl1.csl.utoronto.ca", 
+            "pl2.csl.utoronto.ca"
+        ]
+    }, 
+    "AS23905": {
+        "ISP": "Victoria University of Wellington", 
+        "users": [
+            "planetlab1.ecs.vuw.ac.nz", 
+            "planetlab2.ecs.vuw.ac.nz"
+        ]
+    }, 
+    "AS23910": {
+        "ISP": "China Next Generation Internet CERNET2", 
+        "users": [
+            "pl1.6test.edu.cn", 
+            "pl2.6test.edu.cn"
+        ]
+    }, 
+    "AS24398": {
+        "ISP": "Auckland University of Technology", 
+        "users": [
+            "planetlab1.aut.ac.nz", 
+            "planetlab2.aut.ac.nz"
+        ]
+    }, 
+    "AS2496": {
+        "ISP": "University of Kansas", 
+        "users": [
+            "kupl1.ittc.ku.edu", 
+            "kupl2.ittc.ku.edu"
+        ]
+    }, 
+    "AS2497": {
+        "ISP": "Internet Initiative Japan Inc.", 
+        "users": [
+            "planetlabnode-1.docomolabs-usa.com", 
+            "planetlabnode-2.docomolabs-usa.com"
+        ]
+    }, 
+    "AS25": {
+        "ISP": "University of California at Berkeley", 
+        "users": [
+            "planetlab1.millennium.berkeley.edu", 
+            "planetlab10.millennium.berkeley.edu", 
+            "planetlab11.millennium.berkeley.edu", 
+            "planetlab12.millennium.berkeley.edu", 
+            "planetlab13.millennium.berkeley.edu", 
+            "planetlab16.millennium.berkeley.edu", 
+            "planetlab2.millennium.berkeley.edu", 
+            "planetlab3.millennium.berkeley.edu", 
+            "planetlab5.millennium.berkeley.edu", 
+            "planetlab7.millennium.berkeley.edu", 
+            "planetlab8.millennium.berkeley.edu", 
+            "planetlab9.millennium.berkeley.edu"
+        ]
+    }, 
+    "AS2500": {
+        "ISP": "WIDE Project", 
+        "users": [
+            "planetlab-01.kusa.ac.jp", 
+            "planetlab-02.kusa.ac.jp", 
+            "planetlab0.dojima.wide.ad.jp", 
+            "planetlab0.otemachi.wide.ad.jp", 
+            "planetlab1.dojima.wide.ad.jp", 
+            "planetlab1.otemachi.wide.ad.jp", 
+            "planetlab1.sfc.wide.ad.jp", 
+            "planetlab2.sfc.wide.ad.jp"
+        ]
+    }, 
+    "AS2501": {
+        "ISP": "The University of Tokyo", 
+        "users": [
+            "planetlab1.iii.u-tokyo.ac.jp", 
+            "planetlab2.iii.u-tokyo.ac.jp"
+        ]
+    }, 
+    "AS2506": {
+        "ISP": "NTT WEST CHUGOKU CORPORATION", 
+        "users": [
+            "pl1.sos.info.hiroshima-cu.ac.jp", 
+            "pl2.sos.info.hiroshima-cu.ac.jp", 
+            "pl3.sos.info.hiroshima-cu.ac.jp"
+        ]
+    }, 
+    "AS2547": {
+        "ISP": "BME", 
+        "users": [
+            "planetlab1.tmit.bme.hu", 
+            "planetlab2.tmit.bme.hu"
+        ]
+    }, 
+    "AS2552": {
+        "ISP": "Washington University", 
+        "users": [
+            "vn4.cse.wustl.edu", 
+            "vn5.cse.wustl.edu"
+        ]
+    }, 
+    "AS25776": {
+        "ISP": "University of Oklahoma", 
+        "users": [
+            "roam1.cs.ou.edu", 
+            "roam2.cs.ou.edu"
+        ]
+    }, 
+    "AS25826": {
+        "ISP": "University of Ottawa", 
+        "users": [
+            "pl1.rcc.uottawa.ca", 
+            "pl2.rcc.uottawa.ca"
+        ]
+    }, 
+    "AS2592": {
+        "ISP": "Ege University", 
+        "users": [
+            "planetlab1.plab.ege.edu.tr"
+        ]
+    }, 
+    "AS2611": {
+        "ISP": "BELNET", 
+        "users": [
+            "onelab1.info.ucl.ac.be", 
+            "onelab2.info.ucl.ac.be", 
+            "onelab3.info.ucl.ac.be", 
+            "planck227ple.test.ibbt.be", 
+            "planck249ple.test.iminds.be", 
+            "planck250ple.test.iminds.be", 
+            "planetlab1.extern.kuleuven.be", 
+            "planetlab1.montefiore.ulg.ac.be", 
+            "planetlab2.extern.kuleuven.be", 
+            "planetlab2.montefiore.ulg.ac.be"
+        ]
+    }, 
+    "AS2614": {
+        "ISP": "Agentia de Administrare a Retelei Nationale de Informatica pentru Educatie si Cercetare", 
+        "users": [
+            "planetlab1.upm.ro", 
+            "planetlab2.upm.ro"
+        ]
+    }, 
+    "AS262742": {
+        "ISP": "Funda\u00e7\u00e3o Universidade Federal do ABC - UFABC", 
+        "users": [
+            "planet-lab2.ufabc.edu.br"
+        ]
+    }, 
+    "AS2637": {
+        "ISP": "Georgia Institute of Technology", 
+        "users": [
+            "planet1.cc.gt.atl.ga.us", 
+            "planet2.cc.gt.atl.ga.us", 
+            "planet3.cc.gt.atl.ga.us", 
+            "planet4.cc.gt.atl.ga.us"
+        ]
+    }, 
+    "AS26996": {
+        "ISP": "RYERSON UNIVERSITY", 
+        "users": [
+            "planetlab-1.rml.ryerson.ca", 
+            "planetlab-2.rml.ryerson.ca"
+        ]
+    }, 
+    "AS27": {
+        "ISP": "University of Maryland", 
+        "users": [
+            "miranda.planetlab.cs.umd.edu", 
+            "osiris.planetlab.cs.umd.edu", 
+            "salt.planetlab.cs.umd.edu", 
+            "whitefall.planetlab.cs.umd.edu"
+        ]
+    }, 
+    "AS2701": {
+        "ISP": "Kansas State University", 
+        "users": [
+            "plab3.eece.ksu.edu", 
+            "plab4.eece.ksu.edu"
+        ]
+    }, 
+    "AS2716": {
+        "ISP": "Universidade Federal do Rio Grande do Sul", 
+        "users": [
+            "planetlab1.pop-rs.rnp.br", 
+            "planetlab2.pop-rs.rnp.br"
+        ]
+    }, 
+    "AS27750": {
+        "ISP": "Cooperaci\u00f3n Latino Americana de Redes Avanzadas", 
+        "users": [
+            "planetlab1-buenosaires.lan.redclara.net", 
+            "planetlab1-santiago.lan.redclara.net", 
+            "planetlab1-saopaulo.lan.redclara.net", 
+            "planetlab1-tijuana.lan.redclara.net", 
+            "planetlab2-buenosaires.lan.redclara.net", 
+            "planetlab2-santiago.lan.redclara.net", 
+            "planetlab2-saopaulo.lan.redclara.net", 
+            "planetlab2-tijuana.lan.redclara.net"
+        ]
+    }, 
+    "AS27807": {
+        "ISP": "Fundaci\u00f3n Centro Nacional de Innovaci\u00f3n Tecnol\u00f3gica (CENIT)", 
+        "users": [
+            "fobos.cecalc.ula.ve"
+        ]
+    }, 
+    "AS28027": {
+        "ISP": "Escuela Superior Politecnica del Litoral", 
+        "users": [
+            "planetlab1.cti.espol.edu.ec", 
+            "planetlab2.cti.espol.edu.ec"
+        ]
+    }, 
+    "AS2843": {
+        "ISP": "Linkopings universitet", 
+        "users": [
+            "planetlab-1.ida.liu.se", 
+            "planetlab-2.ida.liu.se"
+        ]
+    }, 
+    "AS2848": {
+        "ISP": "Federal State Educational Institution of Higher Professional Education M.V.Lomonosov Moscow State University", 
+        "users": [
+            "plab1.cs.msu.ru", 
+            "plab3.cs.msu.ru"
+        ]
+    }, 
+    "AS2852": {
+        "ISP": "CESNET z.s.p.o.", 
+        "users": [
+            "planetlab1.cesnet.cz", 
+            "planetlab2.cesnet.cz", 
+            "planetlab3.cesnet.cz", 
+            "ple1.cesnet.cz", 
+            "ple1.zcu.cz", 
+            "ple2.cesnet.cz"
+        ]
+    }, 
+    "AS28571": {
+        "ISP": "UNIVERSIDADE DE SAO PAULO", 
+        "users": [
+            "plab1.larc.usp.br", 
+            "plab2.larc.usp.br"
+        ]
+    }, 
+    "AS28678": {
+        "ISP": "Technical University of Koszalin", 
+        "users": [
+            "ple2.tu.koszalin.pl"
+        ]
+    }, 
+    "AS29": {
+        "ISP": "Yale University", 
+        "users": [
+            "pl1.cs.yale.edu", 
+            "pl2.cs.yale.edu"
+        ]
+    }, 
+    "AS2900": {
+        "ISP": "Arizona Tri University Network", 
+        "users": [
+            "planetlab1.eas.asu.edu", 
+            "planetlab2.eas.asu.edu"
+        ]
+    }, 
+    "AS2907": {
+        "ISP": "Research Organization of Information and Systems, National Institute of Informatics", 
+        "users": [
+            "planet1.pnl.nitech.ac.jp", 
+            "planet2.pnl.nitech.ac.jp"
+        ]
+    }, 
+    "AS29150": {
+        "ISP": "Alcatel-Lucent International SAS", 
+        "users": [
+            "pl1.bell-labs.fr", 
+            "pl2.bell-labs.fr"
+        ]
+    }, 
+    "AS29773": {
+        "ISP": "Carleton University", 
+        "users": [
+            "jupiter.planetlab.carleton.ca", 
+            "saturn.planetlab.carleton.ca"
+        ]
+    }, 
+    "AS3": {
+        "ISP": "Massachusetts Institute of Technology", 
+        "users": [
+            "planetlab3.csail.mit.edu", 
+            "planetlab4.csail.mit.edu", 
+            "planetlab5.csail.mit.edu", 
+            "planetlab6.csail.mit.edu", 
+            "planetlab7.csail.mit.edu"
+        ]
+    }, 
+    "AS30": {
+        "ISP": "SRI International", 
+        "users": [
+            "pl-node-0.csl.sri.com", 
+            "pl-node-1.csl.sri.com"
+        ]
+    }, 
+    "AS31822": {
+        "ISP": "City University of New York", 
+        "users": [
+            "planetlab1.engr.ccny.cuny.edu", 
+            "planetlab2.engr.ccny.cuny.edu"
+        ]
+    }, 
+    "AS32": {
+        "ISP": "Stanford University", 
+        "users": [
+            "planet1.scs.stanford.edu", 
+            "planet2.scs.stanford.edu"
+        ]
+    }, 
+    "AS32157": {
+        "ISP": "DURHAM COLLEGE OF APPLIED ARTS AND TECHNOLOGY", 
+        "users": [
+            "pl1.bit.uoit.ca", 
+            "pl2.bit.uoit.ca"
+        ]
+    }, 
+    "AS3218": {
+        "ISP": "Space Research Institute of Russian Academy of Sciences", 
+        "users": [
+            "planet-lab.iki.rssi.ru"
+        ]
+    }, 
+    "AS32666": {
+        "ISP": "Case Western Reserve University", 
+        "users": [
+            "planetlab-4.eecs.cwru.edu", 
+            "planetlab-5.eecs.cwru.edu"
+        ]
+    }, 
+    "AS3268": {
+        "ISP": "University of Cyprus", 
+        "users": [
+            "planetlab-1.cs.ucy.ac.cy", 
+            "planetlab-3.cs.ucy.ac.cy", 
+            "planetlab-4.cs.ucy.ac.cy"
+        ]
+    }, 
+    "AS3269": {
+        "ISP": "Telecom Italia S.p.a.", 
+        "users": [
+            "host147-82-static.93-94-b.business.telecomitalia.it", 
+            "host149-82-static.93-94-b.business.telecomitalia.it"
+        ]
+    }, 
+    "AS32818": {
+        "ISP": "Cleveland State University Computer Services", 
+        "users": [
+            "planetlab1.csuohio.edu", 
+            "planetlab2.csuohio.edu"
+        ]
+    }, 
+    "AS33084": {
+        "ISP": "DC-Net", 
+        "users": [
+            "nodea.howard.edu", 
+            "nodeb.howard.edu"
+        ]
+    }, 
+    "AS33091": {
+        "ISP": "University of Calgary", 
+        "users": [
+            "planetlab-1.elisa.cpsc.ucalgary.ca", 
+            "planetlab-2.elisa.cpsc.ucalgary.ca"
+        ]
+    }, 
+    "AS3323": {
+        "ISP": "National Technical University of Athens", 
+        "users": [
+            "planetlab3.cslab.ece.ntua.gr", 
+            "planetlab4.cslab.ece.ntua.gr", 
+            "stella.planetlab.ntua.gr", 
+            "vicky.planetlab.ntua.gr"
+        ]
+    }, 
+    "AS3363": {
+        "ISP": "Hong Kong University of Science and Technology", 
+        "users": [
+            "plab1.cs.ust.hk", 
+            "plab2.cs.ust.hk"
+        ]
+    }, 
+    "AS3390": {
+        "ISP": "University of Missouri - Kansas City", 
+        "users": [
+            "kc-sce-plab1.umkc.edu", 
+            "kc-sce-plab2.umkc.edu"
+        ]
+    }, 
+    "AS3449": {
+        "ISP": "Universidad Nacional de Buenos Aires", 
+        "users": [
+            "planet-lab1.uba.ar", 
+            "planet-lab2.uba.ar", 
+            "planet-lab3.uba.ar", 
+            "planet-lab4.uba.ar"
+        ]
+    }, 
+    "AS3452": {
+        "ISP": "University of Alabama at Birmingham", 
+        "users": [
+            "pl1.cis.uab.edu", 
+            "pl2.cis.uab.edu"
+        ]
+    }, 
+    "AS3512": {
+        "ISP": "Emory University", 
+        "users": [
+            "node1.planetlab.mathcs.emory.edu", 
+            "node2.planetlab.mathcs.emory.edu"
+        ]
+    }, 
+    "AS35656": {
+        "ISP": "Jordanian Universities Network L.L.C.", 
+        "users": [
+            "planetlab02.just.edu.jo", 
+            "planetlab1.just.edu.jo"
+        ]
+    }, 
+    "AS3582": {
+        "ISP": "University of Oregon", 
+        "users": [
+            "planetlab1.cs.uoregon.edu", 
+            "planetlab2.cs.uoregon.edu", 
+            "planetlab3.cs.uoregon.edu", 
+            "planetlab4.cs.uoregon.edu"
+        ]
+    }, 
+    "AS3596": {
+        "ISP": "Universidad Autonoma Metropolitana", 
+        "users": [
+            "pl-dccd-01.cua.uam.mx", 
+            "pl-dccd-02.cua.uam.mx"
+        ]
+    }, 
+    "AS36375": {
+        "ISP": "University of Michigan", 
+        "users": [
+            "planetlab1.eecs.umich.edu", 
+            "planetlab2.eecs.umich.edu", 
+            "planetlab3.eecs.umich.edu", 
+            "planetlab4.eecs.umich.edu", 
+            "planetlab5.eecs.umich.edu"
+        ]
+    }, 
+    "AS36441": {
+        "ISP": "University of Georgia", 
+        "users": [
+            "itchy.cs.uga.edu", 
+            "scratchy.cs.uga.edu"
+        ]
+    }, 
+    "AS3661": {
+        "ISP": "The Chinese University of Hong Kong", 
+        "users": [
+            "planetlab1.ie.cuhk.edu.hk", 
+            "planetlab2.ie.cuhk.edu.hk", 
+            "planetlab4.ie.cuhk.edu.hk", 
+            "planetlab5.ie.cuhk.edu.hk"
+        ]
+    }, 
+    "AS36850": {
+        "ISP": "University of North Carolina at Chapel Hill", 
+        "users": [
+            "planetlab1.cs.unc.edu", 
+            "planetlab2.cs.unc.edu"
+        ]
+    }, 
+    "AS37671": {
+        "ISP": "3S INF", 
+        "users": [
+            "planetlab1.esprit-tn.com", 
+            "planetlab2.esprit-tn.com"
+        ]
+    }, 
+    "AS3778": {
+        "ISP": "Temple University", 
+        "users": [
+            "planetlab1.temple.edu", 
+            "planetlab2.temple.edu"
+        ]
+    }, 
+    "AS378": {
+        "ISP": "IUCC - Israel InterUniversity Computation Center", 
+        "users": [
+            "planet1.cs.huji.ac.il", 
+            "planet2.cs.huji.ac.il", 
+            "planetlab1.bgu.ac.il", 
+            "planetlab2.bgu.ac.il", 
+            "planetlab2.tau.ac.il"
+        ]
+    }, 
+    "AS3794": {
+        "ISP": "Texas A&M University", 
+        "users": [
+            "planetlab2.tamu.edu", 
+            "planetlab3.tamu.edu", 
+            "planetlab4.tamu.edu"
+        ]
+    }, 
+    "AS38": {
+        "ISP": "University of Illinois", 
+        "users": [
+            "planetlab1.cs.uiuc.edu", 
+            "planetlab2.cs.uiuc.edu", 
+            "planetlab4.cs.uiuc.edu", 
+            "planetlab5.cs.uiuc.edu", 
+            "planetlab6.cs.uiuc.edu"
+        ]
+    }, 
+    "AS38229": {
+        "ISP": "Lanka Education & Research Network, NREN", 
+        "users": [
+            "planetlab0.ucsc.cmb.ac.lk"
+        ]
+    }, 
+    "AS38305": {
+        "ISP": "The University of Otago", 
+        "users": [
+            "planetlab1.cs.otago.ac.nz", 
+            "planetlab2.cs.otago.ac.nz"
+        ]
+    }, 
+    "AS3851": {
+        "ISP": "Nevada System of Higher Education", 
+        "users": [
+            "planetlab1.unr.edu", 
+            "planetlab2.unr.edu"
+        ]
+    }, 
+    "AS393249": {
+        "ISP": "University of British Columbia", 
+        "users": [
+            "planetlab1.cs.ubc.ca", 
+            "planetlab2.cs.ubc.ca"
+        ]
+    }, 
+    "AS4": {
+        "ISP": "University of Southern California", 
+        "users": [
+            "planetlab1.postel.org", 
+            "planetlab2.postel.org", 
+            "planetlab3.postel.org", 
+            "planetlab4.postel.org"
+        ]
+    }, 
+    "AS40498": {
+        "ISP": "New Mexico Lambda Rail, Inc.", 
+        "users": [
+            "pl1.cs.unm.edu", 
+            "pl2.cs.unm.edu", 
+            "pl3.cs.unm.edu", 
+            "pl4.cs.unm.edu"
+        ]
+    }, 
+    "AS4130": {
+        "ISP": "University of Pittsburgh", 
+        "users": [
+            "planetlab1.cs.pitt.edu", 
+            "planetlab2.cs.pitt.edu"
+        ]
+    }, 
+    "AS4134": {
+        "ISP": "No.31,Jin-rong Street", 
+        "users": [
+            "planetlab-js1.cert.org.cn", 
+            "planetlab-js2.cert.org.cn", 
+            "planetlab1.ustc.edu.cn", 
+            "planetlab2.ustc.edu.cn"
+        ]
+    }, 
+    "AS4190": {
+        "ISP": "Binghamton University", 
+        "users": [
+            "charon.cs.binghamton.edu", 
+            "pluto.cs.binghamton.edu"
+        ]
+    }, 
+    "AS4528": {
+        "ISP": "The University of Hong Kong", 
+        "users": [
+            "planetlab1.eee.hku.hk", 
+            "planetlab2.eee.hku.hk"
+        ]
+    }, 
+    "AS4538": {
+        "ISP": "China Education and Research Network Center", 
+        "users": [
+            "pl1.pku.edu.cn", 
+            "pl2.pku.edu.cn", 
+            "pl2.zju.edu.cn", 
+            "planetlab-1.pdl.nudt.edu.cn", 
+            "planetlab-1.scie.uestc.edu.cn", 
+            "planetlab-1.sjtu.edu.cn", 
+            "planetlab-1.sysu.edu.cn", 
+            "planetlab-2.pdl.nudt.edu.cn", 
+            "planetlab-2.scie.uestc.edu.cn", 
+            "planetlab-2.sjtu.edu.cn", 
+            "planetlab-2.sysu.edu.cn", 
+            "planetlab1.buaa.edu.cn", 
+            "planetlab1.bupt.edu.cn", 
+            "planetlab1.hust.edu.cn", 
+            "planetlab2.buaa.edu.cn", 
+            "planetlab2.hust.edu.cn", 
+            "planetlab3.bupt.edu.cn", 
+            "pln.zju.edu.cn"
+        ]
+    }, 
+    "AS46": {
+        "ISP": "Rutgers University", 
+        "users": [
+            "orbpl1.rutgers.edu", 
+            "orbpl2.rutgers.edu", 
+            "planetlab1.rutgers.edu", 
+            "planetlab2.rutgers.edu", 
+            "planetlab3.rutgers.edu", 
+            "planetlab4.rutgers.edu"
+        ]
+    }, 
+    "AS4616": {
+        "ISP": "Information Technology Services", 
+        "users": [
+            "pl01.comp.polyu.edu.hk", 
+            "pl02.comp.polyu.edu.hk"
+        ]
+    }, 
+    "AS46357": {
+        "ISP": "California Polytechnic State University", 
+        "users": [
+            "planetlab-1.calpoly-netlab.net", 
+            "planetlab-2.calpoly-netlab.net"
+        ]
+    }, 
+    "AS46887": {
+        "ISP": "Lightower Fiber Networks", 
+        "users": [
+            "planetlab1.poly.edu", 
+            "planetlab2.poly.edu"
+        ]
+    }, 
+    "AS46905": {
+        "ISP": "University of Massachusetts - Lowell", 
+        "users": [
+            "planetlab1.cs.uml.edu", 
+            "planetlab2.cs.uml.edu"
+        ]
+    }, 
+    "AS4730": {
+        "ISP": "Osaka University", 
+        "users": [
+            "pl1-higashi.ics.es.osaka-u.ac.jp", 
+            "pl2-higashi.ics.es.osaka-u.ac.jp", 
+            "pub1-s.ane.cmc.osaka-u.ac.jp", 
+            "pub2-s.ane.cmc.osaka-u.ac.jp"
+        ]
+    }, 
+    "AS4755": {
+        "ISP": "TATA Communications formerly VSNL is Leading ISP", 
+        "users": [
+            "plab2.psgtech.ac.in"
+        ]
+    }, 
+    "AS4766": {
+        "ISP": "Korea Telecom", 
+        "users": [
+            "pl1.yonsei.ac.kr", 
+            "pl2.yonsei.ac.kr"
+        ]
+    }, 
+    "AS4767": {
+        "ISP": "Computer Science", 
+        "users": [
+            "ple1.ait.ac.th", 
+            "ple2.ait.ac.th"
+        ]
+    }, 
+    "AS5078": {
+        "ISP": "Oklahoma Network for Education Enrichment and", 
+        "users": [
+            "planetlab1.cs.okstate.edu", 
+            "planetlab2.cs.okstate.edu"
+        ]
+    }, 
+    "AS52": {
+        "ISP": "University of California, Los Angeles", 
+        "users": [
+            "planetlab1.cs.ucla.edu", 
+            "planetlab2.cs.ucla.edu"
+        ]
+    }, 
+    "AS53257": {
+        "ISP": "The Citadel", 
+        "users": [
+            "planetlab1.citadel.edu", 
+            "planetlab2.citadel.edu"
+        ]
+    }, 
+    "AS5408": {
+        "ISP": "Greek Research and Technology Network S.A", 
+        "users": [
+            "iason.inf.uth.gr", 
+            "medea.inf.uth.gr", 
+            "planetlab1.cs.uoi.gr", 
+            "planetlab1.ionio.gr", 
+            "planetlab2.cs.aueb.gr", 
+            "planetlab2.cs.uoi.gr", 
+            "planetlab2.ionio.gr"
+        ]
+    }, 
+    "AS54728": {
+        "ISP": "Depaul University", 
+        "users": [
+            "planetlab1.mnlab.cti.depaul.edu", 
+            "planetlab2.mnlab.cti.depaul.edu"
+        ]
+    }, 
+    "AS55": {
+        "ISP": "University of Pennsylvania", 
+        "users": [
+            "planetlab1.cis.upenn.edu", 
+            "planetlab2.cis.upenn.edu"
+        ]
+    }, 
+    "AS553": {
+        "ISP": "BelWue", 
+        "users": [
+            "chronos.disy.inf.uni-konstanz.de", 
+            "iraplab1.iralab.uni-karlsruhe.de", 
+            "iraplab2.iralab.uni-karlsruhe.de", 
+            "planetvs1.informatik.uni-stuttgart.de", 
+            "planetvs2.informatik.uni-stuttgart.de"
+        ]
+    }, 
+    "AS55847": {
+        "ISP": "NKN EDGE Network", 
+        "users": [
+            "planetlab1.iitkgp.ac.in", 
+            "planetlab2.iitkgp.ac.in"
+        ]
+    }, 
+    "AS559": {
+        "ISP": "SWITCH", 
+        "users": [
+            "icnalplabs1.epfl.ch", 
+            "icnalplabs2.epfl.ch", 
+            "planetlab-1.cs.unibas.ch", 
+            "planetlab01.ethz.ch", 
+            "planetlab02.ethz.ch", 
+            "planetlab1.csg.uzh.ch", 
+            "planetlab1.inf.ethz.ch", 
+            "planetlab1.unineuchatel.ch", 
+            "planetlab2.csg.uzh.ch", 
+            "planetlab2.inf.ethz.ch", 
+            "planetlab2.unineuchatel.ch", 
+            "planetlab3.inf.ethz.ch", 
+            "planetlab4.inf.ethz.ch"
+        ]
+    }, 
+    "AS56132": {
+        "ISP": "Monash University,", 
+        "users": [
+            "pl1.eng.monash.edu.au", 
+            "pl2.eng.monash.edu.au"
+        ]
+    }, 
+    "AS5617": {
+        "ISP": "Orange Polska Spolka Akcyjna", 
+        "users": [
+            "onelab2.warsaw.rd.tp.pl", 
+            "onelab3.warsaw.rd.tp.pl", 
+            "onelab4.warsaw.rd.tp.pl", 
+            "planetlab1.lublin.rd.tp.pl", 
+            "planetlab1.nowogrodzka.rd.tp.pl", 
+            "planetlab1.warsaw.rd.tp.pl", 
+            "planetlab2.lublin.rd.tp.pl", 
+            "planetlab2.olsztyn.rd.tp.pl"
+        ]
+    }, 
+    "AS5661": {
+        "ISP": "UNIVERSITY OF SOUTH FLORIDA", 
+        "users": [
+            "planetlab1.csee.usf.edu", 
+            "planetlab2.csee.usf.edu", 
+            "planetlab3.csee.usf.edu", 
+            "planetlab4.csee.usf.edu", 
+            "planetlab5.csee.usf.edu", 
+            "planetlab6.csee.usf.edu"
+        ]
+    }, 
+    "AS5719": {
+        "ISP": "SUNY at Stony Brook", 
+        "users": [
+            "pl1.cewit.stonybrook.edu", 
+            "pl2.cewit.stonybrook.edu"
+        ]
+    }, 
+    "AS5723": {
+        "ISP": "Johns Hopkins University", 
+        "users": [
+            "planetlab1.cnds.jhu.edu", 
+            "planetlab1.jhu.edu", 
+            "planetlab2.cnds.jhu.edu", 
+            "planetlab2.jhu.edu", 
+            "planetlab3.cnds.jhu.edu", 
+            "planetlab4.cnds.jhu.edu"
+        ]
+    }, 
+    "AS5739": {
+        "ISP": "University of California, Santa Cruz", 
+        "users": [
+            "planetslug4.cse.ucsc.edu", 
+            "planetslug5.cse.ucsc.edu", 
+            "planetslug7.cse.ucsc.edu"
+        ]
+    }, 
+    "AS5786": {
+        "ISP": "University of Puerto Rico", 
+        "users": [
+            "planetlab-01.ece.uprm.edu", 
+            "planetlab-02.ece.uprm.edu"
+        ]
+    }, 
+    "AS59": {
+        "ISP": "University of Wisconsin Madison", 
+        "users": [
+            "planetlab3.wail.wisc.edu", 
+            "planetlab4.wail.wisc.edu"
+        ]
+    }, 
+    "AS6106": {
+        "ISP": "University of California, Riverside", 
+        "users": [
+            "planet-lab1.cs.ucr.edu", 
+            "planet-lab2.cs.ucr.edu"
+        ]
+    }, 
+    "AS6128": {
+        "ISP": "Cablevision Systems Corp.", 
+        "users": [
+            "planetlab1.cnis.nyit.edu", 
+            "planetlab2.cnis.nyit.edu"
+        ]
+    }, 
+    "AS6200": {
+        "ISP": "University of Illinois at Chicago", 
+        "users": [
+            "planetlab-1.cs.uic.edu", 
+            "planetlab-2.cs.uic.edu"
+        ]
+    }, 
+    "AS6356": {
+        "ISP": "Northeast Regional Data Center", 
+        "users": [
+            "planetlab1.acis.ufl.edu", 
+            "planetlab2.acis.ufl.edu"
+        ]
+    }, 
+    "AS6510": {
+        "ISP": "Brigham Young University", 
+        "users": [
+            "planetlab1.byu.edu", 
+            "planetlab2.byu.edu"
+        ]
+    }, 
+    "AS680": {
+        "ISP": "Verein zur Foerderung eines Deutschen Forschungsnetzes e.V.", 
+        "users": [
+            "aladdin.planetlab.extranet.uni-passau.de", 
+            "dschinni.planetlab.extranet.uni-passau.de", 
+            "mars.planetlab.haw-hamburg.de", 
+            "merkur.planetlab.haw-hamburg.de", 
+            "node1.planetlab.uni-luebeck.de", 
+            "node2.planetlab.uni-luebeck.de", 
+            "onelab-1.fhi-fokus.de", 
+            "pl1.prakinf.tu-ilmenau.de", 
+            "pl1.uni-rostock.de", 
+            "pl2.prakinf.tu-ilmenau.de", 
+            "pl2.uni-rostock.de", 
+            "planet-plc-1.mpi-sws.org", 
+            "planet-plc-2.mpi-sws.org", 
+            "planet-plc-3.mpi-sws.org", 
+            "planet-plc-4.mpi-sws.org", 
+            "planet-plc-5.mpi-sws.org", 
+            "planet-plc-6.mpi-sws.org", 
+            "planet01.hhi.fraunhofer.de", 
+            "planet02.hhi.fraunhofer.de", 
+            "planet1.inf.tu-dresden.de", 
+            "planet1.zib.de", 
+            "planet2.inf.tu-dresden.de", 
+            "planetlab-1.fhi-fokus.de", 
+            "planetlab-2.fhi-fokus.de", 
+            "planetlab01.tkn.tu-berlin.de", 
+            "planetlab02.tkn.tu-berlin.de", 
+            "planetlab1.eecs.jacobs-university.de", 
+            "planetlab1.imp.fu-berlin.de", 
+            "planetlab1.informatik.uni-erlangen.de", 
+            "planetlab1.informatik.uni-goettingen.de", 
+            "planetlab1.wiwi.hu-berlin.de", 
+            "planetlab2.eecs.jacobs-university.de", 
+            "planetlab2.imp.fu-berlin.de", 
+            "planetlab2.informatik.uni-erlangen.de", 
+            "planetlab2.informatik.uni-goettingen.de", 
+            "planetlab2.informatik.uni-wuerzburg.de", 
+            "planetlab2.wiwi.hu-berlin.de", 
+            "planetlab3.informatik.uni-erlangen.de"
+        ]
+    }, 
+    "AS681": {
+        "ISP": "The University of Waikato", 
+        "users": [
+            "planetlab-n1.wand.net.nz", 
+            "planetlab-n2.wand.net.nz"
+        ]
+    }, 
+    "AS693": {
+        "ISP": "University of Notre Dame", 
+        "users": [
+            "planetlab1.cse.nd.edu", 
+            "planetlab2.cse.nd.edu", 
+            "planetlab3.cse.nd.edu", 
+            "planetlab4.cse.nd.edu"
+        ]
+    }, 
+    "AS7212": {
+        "ISP": "Vanderbilt University", 
+        "users": [
+            "planetlab-1.vuse.vanderbilt.edu", 
+            "planetlab-2.vuse.vanderbilt.edu"
+        ]
+    }, 
+    "AS73": {
+        "ISP": "University of Washington", 
+        "users": [
+            "planetlab01.cs.washington.edu", 
+            "planetlab02.cs.washington.edu", 
+            "planetlab03.cs.washington.edu", 
+            "planetlab04.cs.washington.edu"
+        ]
+    }, 
+    "AS7303": {
+        "ISP": "Telecom Argentina S.A.", 
+        "users": [
+            "planet-lab1.itba.edu.ar", 
+            "planet-lab2.itba.edu.ar"
+        ]
+    }, 
+    "AS7345": {
+        "ISP": "Alcatel-Lucent", 
+        "users": [
+            "planetlab01.alucloud.com", 
+            "planetlab02.alucloud.com"
+        ]
+    }, 
+    "AS7377": {
+        "ISP": "University of California at San Diego", 
+        "users": [
+            "planetlab1.ucsd.edu", 
+            "planetlab2.ucsd.edu", 
+            "planetlab3.ucsd.edu"
+        ]
+    }, 
+    "AS7472": {
+        "ISP": "Computer Centre", 
+        "users": [
+            "planetlab1.comp.nus.edu.sg", 
+            "planetlab2.comp.nus.edu.sg", 
+            "planetlab3.comp.nus.edu.sg"
+        ]
+    }, 
+    "AS7497": {
+        "ISP": "Computer Network Information Center", 
+        "users": [
+            "planet1.dsp.ac.cn", 
+            "planet2.dsp.ac.cn"
+        ]
+    }, 
+    "AS7545": {
+        "ISP": "TPG Telecom Limited", 
+        "users": [
+            "plnode01.cs.mu.oz.au", 
+            "plnode02.cs.mu.oz.au"
+        ]
+    }, 
+    "AS7575": {
+        "ISP": "Australian Academic and Reasearch Network (AARNet)", 
+        "users": [
+            "planetlab1.research.nicta.com.au", 
+            "planetlab2.research.nicta.com.au"
+        ]
+    }, 
+    "AS766": {
+        "ISP": "Entidad Publica Empresarial Red.es", 
+        "users": [
+            "ops.ii.uam.es", 
+            "planetlab1.dit.upm.es", 
+            "planetlab1.tlm.unavarra.es", 
+            "planetlab1.um.es", 
+            "planetlab1.urv.cat", 
+            "planetlab2.dit.upm.es", 
+            "planetlab2.tlm.unavarra.es", 
+            "planetlab2.um.es", 
+            "planetlab2.urv.cat", 
+            "utet.ii.uam.es"
+        ]
+    }, 
+    "AS7660": {
+        "ISP": "Asia Pacific Advanced Network - Japan", 
+        "users": [
+            "planetlab1.koganei.itrc.net", 
+            "planetlab2.koganei.itrc.net"
+        ]
+    }, 
+    "AS776": {
+        "ISP": "INRIA Sophia-Antipolis", 
+        "users": [
+            "onelab10.pl.sophia.inria.fr", 
+            "openlab01.pl.sophia.inria.fr"
+        ]
+    }, 
+    "AS786": {
+        "ISP": "Jisc Services Limited", 
+        "users": [
+            "planetlab-3.imperial.ac.uk", 
+            "planetlab-4.imperial.ac.uk", 
+            "planetlab1.cs.ucl.ac.uk", 
+            "planetlab1.xeno.cl.cam.ac.uk", 
+            "planetlab2.cs.ucl.ac.uk", 
+            "planetlab2.xeno.cl.cam.ac.uk", 
+            "planetlab3.cs.st-andrews.ac.uk", 
+            "planetlab3.xeno.cl.cam.ac.uk", 
+            "planetlab4.cs.st-andrews.ac.uk"
+        ]
+    }, 
+    "AS7896": {
+        "ISP": "University of Nebraska-Lincoln", 
+        "users": [
+            "planetlab1.unl.edu", 
+            "planetlab2.unl.edu"
+        ]
+    }, 
+    "AS7939": {
+        "ISP": "University of Central Florida", 
+        "users": [
+            "planetlab1.eecs.ucf.edu", 
+            "planetlab2.eecs.ucf.edu"
+        ]
+    }, 
+    "AS7968": {
+        "ISP": "Loyola University Chicago", 
+        "users": [
+            "node0.planetlab.etl.luc.edu"
+        ]
+    }, 
+    "AS8": {
+        "ISP": "Rice University", 
+        "users": [
+            "ricepl-1.cs.rice.edu", 
+            "ricepl-2.cs.rice.edu", 
+            "ricepl-4.cs.rice.edu", 
+            "ricepl-5.cs.rice.edu"
+        ]
+    }, 
+    "AS8256": {
+        "ISP": "Technical University of Lodz Computer Centre", 
+        "users": [
+            "ple1.dmcs.p.lodz.pl", 
+            "ple2.dmcs.p.lodz.pl"
+        ]
+    }, 
+    "AS8267": {
+        "ISP": "Academic Computer Centre CYFRONET AGH", 
+        "users": [
+            "planetlab1.cyfronet.pl"
+        ]
+    }, 
+    "AS8365": {
+        "ISP": "Man-da.de GmbH", 
+        "users": [
+            "host1.planetlab.informatik.tu-darmstadt.de", 
+            "host2.planetlab.informatik.tu-darmstadt.de"
+        ]
+    }, 
+    "AS8508": {
+        "ISP": "Silesian University of Technology, Computer Centre", 
+        "users": [
+            "plab2.ple.silweb.pl", 
+            "plab3.ple.silweb.pl", 
+            "plab4.ple.silweb.pl"
+        ]
+    }, 
+    "AS8522": {
+        "ISP": "Foundation of Research and Technology Hellas", 
+        "users": [
+            "planetlab2.ics.forth.gr"
+        ]
+    }, 
+    "AS8643": {
+        "ISP": "University of Athens", 
+        "users": [
+            "plato.di.uoa.gr", 
+            "plutarch.di.uoa.gr"
+        ]
+    }, 
+    "AS87": {
+        "ISP": "Indiana University", 
+        "users": [
+            "pl1.ucs.indiana.edu", 
+            "pl2.ucs.indiana.edu"
+        ]
+    }, 
+    "AS88": {
+        "ISP": "Princeton University", 
+        "users": [
+            "planetlab-01.cs.princeton.edu", 
+            "planetlab-03.cs.princeton.edu", 
+            "planetlab-04.cs.princeton.edu"
+        ]
+    }, 
+    "AS8890": {
+        "ISP": "University of Warsaw", 
+        "users": [
+            "prata.mimuw.edu.pl", 
+            "roti.mimuw.edu.pl"
+        ]
+    }, 
+    "AS8970": {
+        "ISP": "Wroclaw Centre of Networking and Supercomputing", 
+        "users": [
+            "planetlab1.ci.pwr.wroc.pl", 
+            "planetlab2.ci.pwr.wroc.pl"
+        ]
+    }, 
+    "AS8973": {
+        "ISP": "Kungliga Tekniska Hogskolan", 
+        "users": [
+            "planetlab-1.ssvl.kth.se", 
+            "planetlab-2.ssvl.kth.se"
+        ]
+    }, 
+    "AS9": {
+        "ISP": "Carnegie Mellon University", 
+        "users": [
+            "planetlab-1.cmcl.cs.cmu.edu", 
+            "planetlab-2.cmcl.cs.cmu.edu", 
+            "planetlab-3.cmcl.cs.cmu.edu"
+        ]
+    }, 
+    "AS9112": {
+        "ISP": "Institute of Bioorganic Chemistry Polish Academy of Science, Poznan Supercomputing and Networking Center", 
+        "users": [
+            "planetlab-2.man.poznan.pl"
+        ]
+    }, 
+    "AS9116": {
+        "ISP": "012 Smile Communications LTD.", 
+        "users": [
+            "planetlab1.mta.ac.il", 
+            "planetlab2.mta.ac.il"
+        ]
+    }, 
+    "AS9121": {
+        "ISP": "Turk Telekomunikasyon Anonim Sirketi", 
+        "users": [
+            "planet1.ku.edu.tr", 
+            "planet2.ku.edu.tr"
+        ]
+    }, 
+    "AS9264": {
+        "ISP": "Academic Sinica Network", 
+        "users": [
+            "planetlab1.iis.sinica.edu.tw", 
+            "planetlab2.iis.sinica.edu.tw"
+        ]
+    }, 
+    "AS9270": {
+        "ISP": "National Infomation Society Agency", 
+        "users": [
+            "pl1snu.koren.kr", 
+            "pl2snu.koren.kr"
+        ]
+    }, 
+    "AS9431": {
+        "ISP": "The University of Auckland", 
+        "users": [
+            "planetlab-1.cs.auckland.ac.nz", 
+            "planetlab-2.cs.auckland.ac.nz"
+        ]
+    }, 
+    "AS9432": {
+        "ISP": "University of Canterbury", 
+        "users": [
+            "planetlab3.canterbury.ac.nz", 
+            "planetlab4.canterbury.ac.nz"
+        ]
+    }, 
+    "AS9488": {
+        "ISP": "Seoul National University", 
+        "users": [
+            "arari.snu.ac.kr", 
+            "recall.snu.ac.kr"
+        ]
+    }
+}

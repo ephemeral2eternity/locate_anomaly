@@ -1,0 +1,12 @@
+{
+    "AS": "AS17", 
+    "ISP": "Purdue University", 
+    "city": "West Lafayette", 
+    "country": "US", 
+    "hostname": "planetlab2.cs.purdue.edu", 
+    "ip": "128.10.18.53", 
+    "loc": "40.4259,-86.9081", 
+    "org": "AS17 Purdue University", 
+    "postal": "47907", 
+    "region": "Indiana"
+}
