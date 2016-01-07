@@ -19,9 +19,14 @@ def is_reserved(ip):
     return False
 
 def ipinfo(ip):
-    url = 'http://ipinfo.io/' + ip
-    resp = requests.get(url)
-    hop_info = json.loads(resp.text)
+    try:
+        url = 'http://ipinfo.io/' + ip
+        resp = requests.get(url)
+        hop_info = json.loads(resp.text)
+    except:
+        print "[Error]Failed to get hop info from ipinfo.io, the maximum # of requests have been achieved today!"
+        print "[Error]The ip needed is :", ip
+        exit(0)
 
     if 'org' in hop_info.keys():
         hop_org = hop_info['org']
@@ -50,12 +55,12 @@ if __name__ == "__main__":
         ip = host2ip(hop_name)
     else:
         ip = hop_name
-    print ip
+    # print ip
 
-    if is_reserved(ip):
-        print ip, " is a private ip!"
-    else:
-        print ip, " is a public ip!"
+    if not is_reserved(ip):
+        # print ip, " is a private ip!"
+    # else:
+        # print ip, " is a public ip!"
         hop_info = ipinfo(ip)
         outPath = 'D://GitHub/monitor_agent/clientsInfo/'
         save_ipinfo(outPath, hop_info)

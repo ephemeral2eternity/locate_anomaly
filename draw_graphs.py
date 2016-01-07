@@ -45,6 +45,16 @@ def draw_event_cnts(anomaly_cnts, isDraw=True, figName="anomaly_cnts_bar"):
     if isDraw:
         save_fig(fig, figName)
 
+
+def bar_anomaly_locations(anomaly_locs):
+    loc_per_user = {}
+    all_users = anomaly_locs.keys()
+    for user in all_users:
+        cur_user_locs = anomaly_locs[user]
+        for user_event_id in cur_user_locs.keys():
+            cur_event_locs = cur_user_locs[user][user_event_id]
+
+
 def save_fig(fig, figName):
     pdf = PdfPages('./imgs/' + figName + '.pdf')
     pdf.savefig(fig)

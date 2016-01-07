@@ -8,6 +8,31 @@ from utils import *
 from ipinfo.host2ip import *
 from ipinfo.ipinfo import *
 
+
+def read_hop_info(hopinfo_path, hop_ip):
+    default_hop_path = hopinfo_path + hop_ip + ".json"
+    if os.path.exists(default_hop_path):
+        try:
+            hop_info = json.load(open(default_hop_path))
+        except:
+            os.remove(default_hop_path)
+            if is_ip(hop_ip):
+                hop_info = ipinfo(hop_ip)
+                save_ipinfo(hopinfo_path, hop_info)
+            else:
+                hop_info = {}
+    else:
+        if not is_ip(hop_ip):
+            hop_ip = host2ip(hop_ip)
+
+        if is_ip(hop_ip):
+            hop_info = ipinfo(hop_ip)
+            save_ipinfo(hopinfo_path, hop_info)
+        else:
+            hop_info = {}
+    return hop_info
+
+
 def load_all_hops(trFolder):
     all_hops = {}
 
@@ -46,6 +71,7 @@ def load_all_hops(trFolder):
     print "Total number of hops: ", total_hops
     return all_hops
 
+
 def load_usr_hops_on_srv(trFolder, srvName, user):
     out_tr_data = {}
     user_tr_files = glob.glob(trFolder + "tr@" + user + "@*")
@@ -59,6 +85,7 @@ def load_usr_hops_on_srv(trFolder, srvName, user):
             out_tr_data[tr_file_ts] = hops_on_srv
     return out_tr_data
 
+
 def find_cur_usr_hops(user_tr, denoted_ts):
     all_ts = sorted(user_tr.keys(), key=float, reverse=True)
     for ts in all_ts:
@@ -69,7 +96,7 @@ def find_cur_usr_hops(user_tr, denoted_ts):
 
 
 if __name__ == "__main__":
-    trFolder = "D://Data/cloud-monitor-data/gcloud-1219/tr/"
+    # trFolder = "D://Data/cloud-monitor-data/gcloud-1219/tr/"
     # srvName = "agens-04"
     # user = "75-130-96-12.static.oxfr.ma.charter.com"
     # trData = load_usr_hops_on_srv(trFolder, srvName, user)
@@ -78,6 +105,10 @@ if __name__ == "__main__":
     # cur_ts = '1450488655.556846'
     # cur_hops = find_cur_usr_hops(trData, cur_ts)
     # print cur_hops
-    all_hops = load_all_hops(trFolder)
-    out_folder = "D://GitHub/locate_anomaly/data/"
-    writeJson(out_folder, "all_hops", all_hops)
+    # all_hops = load_all_hops(trFolder)
+    # out_folder = "D://GitHub/locate_anomaly/data/"
+    # writeJson(out_folder, "all_hops", all_hops)
+    hopinfo_path = "D://Data/cdn-monitor-data/azure-hops/"
+    hop_ip = "194.79.136.105"
+    hop_info = read_hop_info(hopinfo_path, hop_ip)
+    print hop_info

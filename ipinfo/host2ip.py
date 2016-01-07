@@ -3,7 +3,7 @@ import socket
 
 def is_hostname(hop_name):
     ch_pattern = re.compile('[a-zA-Z]')
-    print hop_name
+    # print hop_name
     chars = re.findall(ch_pattern, hop_name)
     if len(chars) > 0:
         return True
@@ -21,7 +21,7 @@ def host2ip(hop_name):
     try:
         ip = socket.gethostbyname(hop_name)
     except socket.error:
-        print "[Error]The hostname : ", hop_name, " can not be resolved!"
+        # print "[Error]The hostname : ", hop_name, " can not be resolved!"
         ip = "*"
     return ip
 
@@ -32,4 +32,4 @@ if __name__ == "__main__":
     else:
         ip = hop_name
 
-    print ip
+    # print ip

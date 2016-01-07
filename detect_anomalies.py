@@ -9,6 +9,8 @@ import ntpath
 from utils import *
 from get_clients_info import *
 from draw_graphs import *
+from time_str import *
+
 
 def merge_events(anomaly_pts, time_win):
     anomaly_events = {}
@@ -29,6 +31,7 @@ def merge_events(anomaly_pts, time_win):
                 event_end = prePts
                 anomaly_events[event_no] = [event_start, event_end]
                 event_start = ts
+                prePts = ts
 
         event_no += 1
         anomaly_events[event_no] = [event_start, event_end]
@@ -46,6 +49,7 @@ def detect_anomaly_points(user_qoe, SLA, qoeType):
             anomalies.append(float(user_qoe[ch_id]['TS']))
     return anomalies
 
+
 def detect_anomaly(qoeFolder, SLA, qoeType):
     anomaly_user_pts = {}
     all_qoe_files = glob.glob(qoeFolder + "*.json")
@@ -59,7 +63,6 @@ def detect_anomaly(qoeFolder, SLA, qoeType):
         if user_name not in anomaly_user_pts.keys():
             anomaly_user_pts[user_name] = []
         anomaly_user_pts[user_name] += anomaly_pts
-
 
     ## Filter anomaly points to events using time window
     anomaly_events = {}
@@ -77,12 +80,34 @@ def detect_anomaly(qoeFolder, SLA, qoeType):
 
     return anomaly_events, anomaly_user_num, total_number_anomaly_events
 
+
 def count_event(anomaly_events):
     anomaly_cnts = {}
     for client in anomaly_events.keys():
         anomaly_cnts[client] = len(anomaly_events[client].keys())
 
     return anomaly_cnts
+
+
+def filter_events(anomaly_events, ts_range):
+    filtered_events = {}
+    all_users = anomaly_events.keys()
+    total_number_anomaly_events = 0
+    anomaly_user_num = 0
+    for user in all_users:
+        filtered_event_id = 0
+        filtered_events[user] = {}
+        for event_id in anomaly_events[user].keys():
+            cur_anomaly_ts_range = anomaly_events[user][event_id]
+            if (cur_anomaly_ts_range[0] > ts_range[0]) and (cur_anomaly_ts_range[1] < ts_range[1]):
+                filtered_event_id += 1
+                filtered_events[user][filtered_event_id] = list(anomaly_events[user][event_id])
+                total_number_anomaly_events += 1
+        if filtered_event_id > 0:
+            anomaly_user_num += 1
+
+    return filtered_events, anomaly_user_num, total_number_anomaly_events
+
 
 if __name__ == "__main__":
     ## Default data folder
@@ -92,6 +117,7 @@ if __name__ == "__main__":
     SLA = 1.0
     timeWin = 30
     qoeType = "QoE2"
+    ts_range = [1451968800, 1451970600]
 
     anomaly_events, anomaly_user_num, total_number_anomaly_events = detect_anomaly(qoeFolder, SLA, qoeType)
 
@@ -99,8 +125,15 @@ if __name__ == "__main__":
     print "Number of anomaly users: ", anomaly_user_num
     print "Total number of anomaly events: ", total_number_anomaly_events
 
+    anomaly_events, anomaly_user_num, total_number_anomaly_events = filter_events(anomaly_events, ts_range)
+    print "Total number of users: " , len(anomaly_events.keys())
+    print "Filtered number of anomaly users: ", anomaly_user_num
+    print "Total number of anomaly events: ", total_number_anomaly_events
+
     anomaly_cnts = count_event(anomaly_events)
     draw_event_cnts(anomaly_cnts, isDraw=False)
     plot_event_cnts(anomaly_cnts, isDraw=True)
 
-    writeJson(rstsFolder, "anomaly-user", anomaly_events)
+    filter_ts_str = ts2timestr(ts_range[0]) + "-" + ts2timestr(ts_range[1])
+
+    writeJson(rstsFolder, "anomaly-events-" + filter_ts_str, anomaly_events)
