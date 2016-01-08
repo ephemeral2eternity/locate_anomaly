@@ -131,8 +131,8 @@ if __name__ == "__main__":
     print "Total number of anomaly events: ", total_number_anomaly_events
 
     anomaly_cnts = count_event(anomaly_events)
-    draw_event_cnts(anomaly_cnts, isDraw=False)
-    plot_event_cnts(anomaly_cnts, isDraw=True)
+    draw_event_cnts(anomaly_cnts, toSave=False)
+    plot_event_cnts(anomaly_cnts, toSave=True)
 
     filter_ts_str = ts2timestr(ts_range[0]) + "-" + ts2timestr(ts_range[1])
 
