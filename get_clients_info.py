@@ -11,6 +11,7 @@ import re
 from utils import *
 from ipinfo.host2ip import *
 from ipinfo.ipinfo import *
+from get_server import *
 
 ## Get user QoE files
 def get_node_ips(inputList, outputFolder, outputName):
@@ -65,7 +66,9 @@ def read_user_info(user_name):
             user_info = {}
     return user_info
 
-def get_first_mile_groups(inputFolder, silent_mode=True, outputFolder=os.getcwd() + "/rsts/first-mile/"):
+
+# The first server may not be the server through the whole streaming session in CloudFront
+def get_first_mile_groups(inputFolder, silent_mode=True, outputFolder=os.getcwd() + "/data/", outputFileName="firstmile_group"):
     ## Get user QoE files
     qoe_files = glob.glob(inputFolder + "*")
 
@@ -76,39 +79,30 @@ def get_first_mile_groups(inputFolder, silent_mode=True, outputFolder=os.getcwd(
     for user_qoe_file in qoe_files:
         user_file_name = ntpath.basename(user_qoe_file)
         user_name = user_file_name.split('_')[0]
-        user_chunk_qoe = json.load(open(user_qoe_file))
         ## print user_file_name
-        srv = user_chunk_qoe["0"]["Server"]
+        srvs = get_all_servers(user_qoe_file)
 
-        if srv not in users.keys():
-            users[srv] = []
-        else:
+        for srv in srvs:
+            if srv not in users.keys():
+                users[srv] = []
+
             if user_name not in users[srv]:
                 users[srv].append(user_name)
 
         if silent_mode:
             continue
 
-        srvDir = outputFolder + srv + "/"
-        dir = os.path.dirname(srvDir)
-        try:
-            os.stat(dir)
-        except:
-            os.mkdir(dir)
-
-        shutil.copy2(user_qoe_file, srvDir)
-
         if srv not in srv_info.keys():
             cur_srv_info = ipinfo(srv)
             srv_info[srv] = cur_srv_info
 
     if not silent_mode:
-        writeJson(outputFolder, "firstmile_group", users)
-        writeJson(outputFolder, "srv_info", srv_info)
+        writeJson(outputFolder, outputFileName, users)
 
     return users
 
-def get_last_mile_groups(inputFolder, silent_mode=True, outputFolder=os.getcwd() + "/rsts/last-mile/"):
+
+def get_last_mile_groups(inputFolder, silent_mode=True, outputFolder=os.getcwd() + "/data/", outputFileName="lastmile_group"):
     ## Get user QoE files
     default_as_file = "./clientsInfo/ases.json"
     qoe_files = glob.glob(inputFolder + "*")
@@ -134,15 +128,6 @@ def get_last_mile_groups(inputFolder, silent_mode=True, outputFolder=os.getcwd()
 
             if silent_mode:
                 continue
-
-            asDir = outputFolder + user_as + "/"
-            dir = os.path.dirname(asDir)
-            try:
-                os.stat(dir)
-            except:
-                os.mkdir(dir)
-
-            shutil.copy2(user_qoe_file, asDir)
         else:
             continue
 
@@ -154,9 +139,10 @@ def get_last_mile_groups(inputFolder, silent_mode=True, outputFolder=os.getcwd()
 if __name__ == "__main__":
 
     ## Default data folder
-    inputFolder = "D://Data/cdn-monitor-data/azure-0105/qoe/"
-    outputFolder = "D://Data/cdn-monitor-data/azure-0105/first-mile-group/"
-    get_first_mile_groups(inputFolder, outputFolder)
+    inFolder = "D://Data/cdn-monitor-data/aws-0109/qoe/"
+    outFolder = "D://Data/cdn-monitor-data/aws-0109/peers/"
+    get_first_mile_groups(inFolder, silent_mode=False, outputFolder=outFolder)
+    get_last_mile_groups(inFolder, silent_mode=False, outputFolder=outFolder)
 
     '''
     ## Default data folder

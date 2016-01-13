@@ -11,6 +11,7 @@ import re
 import calendar, time, datetime
 from get_clients_info import *
 from get_files import *
+from load_metrics_in_range import *
 
 
 def get_user_srv(qoe_file_path, given_user, ts):
@@ -23,10 +24,16 @@ def get_user_srv(qoe_file_path, given_user, ts):
     return None
 
 
-def get_first_mile_peers(qoe_file_path, given_user, ts):
+def get_first_mile_peers(qoe_file_path, given_user, given_srv, ts_range):
+    # user_groups = get_first_mile_groups(qoe_file_path, given_srv, ts_range, True)
+    ## Get user QoE files
     user_groups = get_first_mile_groups(qoe_file_path, True)
-    given_user_srv = get_user_srv(qoe_file_path, given_user, ts)
-    first_mile_peers = user_groups[given_user_srv]
+    first_mile_peers = user_groups[given_srv]
+
+
+    if given_user in first_mile_peers:
+        first_mile_peers.remove(given_user)
+
     return first_mile_peers
 
 
@@ -38,6 +45,9 @@ def get_last_mile_peers(qoe_file_path, given_user):
         last_mile_peers = user_groups[given_user_as]
     else:
         last_mile_peers = []
+
+    if given_user in last_mile_peers:
+        last_mile_peers.remove(given_user)
 
     return last_mile_peers
 

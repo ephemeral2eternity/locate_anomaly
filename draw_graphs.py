@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import json
 import os
+from utils import *
+from get_files import *
 from matplotlib.backends.backend_pdf import PdfPages
 
 
@@ -21,6 +23,7 @@ def plot_event_cnts(anomaly_cnts, toSave=True, figName="anomaly_cnts_plt"):
     plt.plot(sorted_cnts, linewidth=1.0)
     ax.set_xlabel('User ID', fontsize=15)
     ax.set_ylabel('The number of anomaly events', fontsize=15)
+    fig.tight_layout()
     plt.show()
 
     if toSave:
@@ -42,13 +45,14 @@ def draw_event_cnts(anomaly_cnts, toSave=True, figName="anomaly_cnts_bar"):
     ax.set_xticklabels(sorted_users)
     ax.set_ylabel('The number of anomaly events!')
     fig.autofmt_xdate()
+    fig.tight_layout()
     plt.show()
 
     if toSave:
         save_fig(fig, figName)
 
 
-def draw_anomaly_location_cnts(anomaly_locs, toSave=False, figName="anomaly_loc_typ_cnts"):
+def draw_anomaly_location_types(anomaly_locs, toSave=False, figName="anomaly_loc_typ_cnts"):
     ## Initialize the count of events in each type of anomaly location.
     anomaly_loc_cnts = {}
     uniq_anomaly_loc_cnts = {}
@@ -88,11 +92,23 @@ def draw_anomaly_location_cnts(anomaly_locs, toSave=False, figName="anomaly_loc_
         ax.text(v + 3, i + width + width/2, str(v), color='red', fontweight='bold')
 
     plt.legend(fontsize=15)
-
+    fig.tight_layout()
     plt.show()
 
     if toSave:
         save_fig(fig, figName)
+
+def plot_scatter(x, y):
+    plt.scatter(x, y, alpha=0.5)
+    plt.show()
+
+
+
+def draw_cdf(data, ls, lg):
+    sorted_data = sorted(data)
+    yvals = np.arange(len(sorted_data))/float(len(sorted_data))
+    plt.plot(yvals, sorted_data, ls, label=lg, linewidth=2.0)
+# plt.show()
 
 
 def save_fig(fig, figName):
@@ -103,9 +119,41 @@ def save_fig(fig, figName):
 
 
 if __name__ == "__main__":
+    '''
+    ## Default anomaly detection results file
+    anomaly_file = "D://Data/cdn-monitor-data/aws-0109/anomaly/anomaly-events-01090500-01090600.json"
+    anomaly_events = json.load(open(anomaly_file))
+    anomaly_cnts = count_events_per_user(anomaly_events)
+    plot_event_cnts(anomaly_cnts, toSave=True, figName="anomaly_cnts_plt_aws_0109")
+    '''
 
-    ## Default data folder
-    anomaly_loc_file = "D://Data/cdn-monitor-data/azure-0105/anomaly/anomaly-locations-01050440-01050510.json"
-
+    ## Default anomaly localization results file
+    anomaly_loc_file = "D://Data/cdn-monitor-data/aws-0109/anomaly/anomaly-locations-01090500-01090600.json"
+    trace_folder = "D://Data/cdn-monitor-data/aws-0109/tr/"
     anomaly_locations = json.load(open(anomaly_loc_file))
-    draw_anomaly_location_cnts(anomaly_locations, toSave=True, figName="anomaly_loc_typ_cnts")
+    aws_loc_precision = get_localization_precision(anomaly_locations, trace_folder)
+    draw_anomaly_location_types(anomaly_locations, toSave=False, figName="anomaly_loc_typ_aws_0109")
+
+
+    trace_folder = "D://Data/cdn-monitor-data/azure-0112/tr/"
+    anomaly_loc_file = "D://Data/cdn-monitor-data/azure-0112/anomaly/anomaly-locations-01120400-01120500.json"
+    anomaly_locations = json.load(open(anomaly_loc_file))
+    az_loc_precision = get_localization_precision(anomaly_locations, trace_folder)
+    draw_anomaly_location_types(anomaly_locations, toSave=False, figName="anomaly_loc_typ_azure_0112")
+
+
+    fig, ax = plt.subplots()
+    draw_cdf(aws_loc_precision, 'k-', 'AWS CloudFront')
+    draw_cdf(az_loc_precision, 'b-.', 'Azure CDN')
+    ax.set_ylabel(r'Anomaly Localization Precision', fontsize=20)
+    ax.set_xlabel(r'The percentage of anomaly events', fontsize=20)
+    ax.set_title('The CDF of localization precision', fontsize=20)
+    plt.legend(loc=0)
+
+    plt.show()
+    save_fig(fig, "Anomaly_localization_precision_comparison")
+
+
+    #precision_over_peernum = get_precision_over_peernum(anomaly_locations, trace_folder)
+    #fig, ax = plt.subplots()
+    #plot_scatter(precision_over_peernum[:, 1], precision_over_peernum[:, 0])

@@ -6,11 +6,14 @@ from utils import *
 from get_files import *
 
 
-def get_server(qoe_folder, user, ts):
-    user_qoe_file = find_cur_file(qoe_folder, user, ts)
-    user_qoe = json.load(open(qoe_folder + user_qoe_file))
-    srv = user_qoe['0']['Server']
-    return srv
+def get_all_servers(user_qoe_file):
+    all_srvs = []
+    user_qoe = json.load(open(user_qoe_file))
+    for ch_id in sorted(user_qoe.keys(), key=int):
+        srv = user_qoe[ch_id]['Server']
+        if srv not in all_srvs:
+            all_srvs.append(srv)
+    return all_srvs
 
 
 def get_srv_hop_id(srv, cur_route, rtt):
