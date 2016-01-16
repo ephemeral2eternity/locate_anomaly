@@ -3,7 +3,6 @@ import requests
 import os
 import socket
 import struct
-from host2ip import *
 
 def is_reserved(ip):
     f = struct.unpack('!I', socket.inet_aton(ip))[0]
@@ -19,6 +18,7 @@ def is_reserved(ip):
     return False
 
 def ipinfo(ip):
+    hop_info = {}
     try:
         url = 'http://ipinfo.io/' + ip
         resp = requests.get(url)
@@ -34,6 +34,16 @@ def ipinfo(ip):
         hop_info['AS'] = hop_org_items[0]
         hop_info['ISP'] = " ".join(hop_org_items[1:])
     return hop_info
+
+
+def ip2host(ip):
+    ip_info = ipinfo(ip)
+    if 'hostname' in ip_info.keys():
+        host_name = ip_info['hostname']
+    else:
+        host_name = "Unknown"
+    return host_name
+
 
 def save_ipinfo(outPath, hop_info):
     try:
@@ -51,16 +61,16 @@ def save_ipinfo(outPath, hop_info):
 if __name__ == "__main__":
     # hop_name = "et-5-0-0.120.rtr.eqny.net.internet2.edu"
     hop_name = "10.50.20.61"
-    if is_hostname(hop_name):
-        ip = host2ip(hop_name)
-    else:
-        ip = hop_name
+    # if is_hostname(hop_name):
+    #    ip = host2ip(hop_name)
+    #else:
+    #    ip = hop_name
     # print ip
 
-    if not is_reserved(ip):
+    if not is_reserved(hop_name):
         # print ip, " is a private ip!"
     # else:
         # print ip, " is a public ip!"
-        hop_info = ipinfo(ip)
+        hop_info = ipinfo(hop_name)
         outPath = 'D://GitHub/monitor_agent/clientsInfo/'
         save_ipinfo(outPath, hop_info)

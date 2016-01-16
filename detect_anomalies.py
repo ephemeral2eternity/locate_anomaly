@@ -1,14 +1,8 @@
 # Locate anomalies via user QoE and their route info
 # Chen Wang, chenw@cmu.edu
 # 2016-01-04
-import glob
-import json
-import os
-import shutil
-import ntpath
-from utils import *
-from get_clients_info import *
-from draw_graphs import *
+from draws.draw_utils import *
+from draws.draw_qoe_related import *
 from time_str import *
 
 
@@ -57,7 +51,7 @@ def detect_anomaly_points(user_qoe, SLA, qoeType):
     anomalies = {}
     chunk_ids = sorted(user_qoe.keys(), key=int)
     ## Ignore the first two chunks that has bad QoE as it is impacted by the startup logic.
-    for ch_id in chunk_ids[5:]:
+    for ch_id in chunk_ids:
         ch_qoe = float(user_qoe[ch_id][qoeType])
         ch_srv = user_qoe[ch_id]["Server"]
         if ch_qoe < SLA:
@@ -93,9 +87,9 @@ def detect_anomaly(qoeFolder, SLA, qoeType):
         total_number_anomaly_events += user_event_num
         if len(cur_anomaly_events.keys()) > 0:
             anomaly_user_num+=1
-        print "Anomaly Events for user : ", user
-        print cur_anomaly_events
-        print "Anomaly User: ", user, " # of anomaly events : ", user_event_num
+        # print "Anomaly Events for user : ", user
+        # print cur_anomaly_events
+        # print "Anomaly User: ", user, " # of anomaly events : ", user_event_num
 
     return anomaly_events, anomaly_user_num, total_number_anomaly_events
 
@@ -111,7 +105,8 @@ def filter_events(anomaly_events, ts_range):
         for srv in anomaly_events[user].keys():
             cur_usr_srv_events = anomaly_events[user][srv]
             for cur_anomaly_ts_range in anomaly_events[user][srv]:
-                if (cur_anomaly_ts_range[0] > ts_range[0]) and (cur_anomaly_ts_range[1] < ts_range[1]):
+                if ((cur_anomaly_ts_range[0] <= ts_range[1]) and (cur_anomaly_ts_range[0] >= ts_range[0])) \
+                        or ((cur_anomaly_ts_range[1] >= ts_range[0]) and (cur_anomaly_ts_range[1] <= ts_range[1])):
                     if srv not in filtered_events[user].keys():
                         filtered_events[user][srv] = []
                     filtered_events[user][srv].append(list(cur_anomaly_ts_range))
@@ -125,35 +120,59 @@ def filter_events(anomaly_events, ts_range):
 
 if __name__ == "__main__":
     ## Default data folder
-    qoeFolder = "D://Data/cdn-monitor-data/azure-0112/qoe/"
-    rstsFolder = "D://Data/cdn-monitor-data/azure-0112/anomaly/"
+    aws_qoeFolder = "D://Data/cdn-monitor-data/aws-0109/qoe/"
+    aws_rstsFolder = "D://Data/cdn-monitor-data/aws-0109/anomaly/"
+
+    rs_qoeFolder = "D://Data/cdn-monitor-data/rs-0113/qoe/"
+    rs_rstsFolder = "D://Data/cdn-monitor-data/rs-0113/anomaly/"
+    figName = "anomaly_cnts_plt_all_cdns"
+
+    azure_qoeFolder = "D://Data/cdn-monitor-data/azure-0112/qoe/"
+    azure_rstsFolder = "D://Data/cdn-monitor-data/azure-0112/anomaly/"
+    # figName = "anomaly_cnts_plt_azure_0112"
 
     SLA = 1.0
     timeWin = 30
     qoeType = "QoE2"
-    # ts_range = [1452315600, 1452319200]         # AWS-0109 data
-    ts_range = [1452571200, 1452574800]             # Azure-0112 data
+    aws_ts_range = [1452315600, 1452319200]         # AWS-0109 data
+    azure_ts_range = [1452571200, 1452574800]             # Azure-0112 data
+    rs_ts_range = [1452708000, 1452711600]
 
-    anomaly_events, anomaly_user_num, total_number_anomaly_events = detect_anomaly(qoeFolder, SLA, qoeType)
+    aws_anomaly_events, aws_anomaly_user_num, aws_total_number_anomaly_events = detect_anomaly(aws_qoeFolder, SLA, qoeType)
+    aws_anomaly_events, aws_anomaly_user_num, aws_total_number_anomaly_events = filter_events(aws_anomaly_events, aws_ts_range)
+    print "QoE based Anomaly detection for CDN: CloudFront!"
+    print "Total number of users: ", len(aws_anomaly_events.keys())
+    print "Number of anomaly users: ", aws_anomaly_user_num
+    print "Total number of anomaly events: ", aws_total_number_anomaly_events
+    aws_filter_ts_str = ts2timestr(aws_ts_range[0], "%m%d%H%M") + "-" + ts2timestr(aws_ts_range[1], "%m%d%H%M")
+    writeJson(aws_rstsFolder, "anomaly-events-"+aws_filter_ts_str, aws_anomaly_events)
 
-    print "Total number of users: ", len(anomaly_events.keys())
-    print "Number of anomaly users: ", anomaly_user_num
-    print "Total number of anomaly events: ", total_number_anomaly_events
-    writeJson(rstsFolder, "anomaly-events", anomaly_events)
+    azure_anomaly_events, azure_anomaly_user_num, azure_total_number_anomaly_events = detect_anomaly(azure_qoeFolder, SLA, qoeType)
+    azure_anomaly_events, azure_anomaly_user_num, azure_total_number_anomaly_events = filter_events(azure_anomaly_events, azure_ts_range)
+    print "QoE based Anomaly detection for CDN: Azure!"
+    print "Total number of users: ", len(azure_anomaly_events.keys())
+    print "Number of anomaly users: ", azure_anomaly_user_num
+    print "Total number of anomaly events: ", azure_total_number_anomaly_events
+    azure_filter_ts_str = ts2timestr(azure_ts_range[0], "%m%d%H%M") + "-" + ts2timestr(azure_ts_range[1], "%m%d%H%M")
+    writeJson(aws_rstsFolder, "anomaly-events-"+azure_filter_ts_str, azure_anomaly_events)
 
-    anomaly_cnts = count_events_per_user(anomaly_events)
-    draw_event_cnts(anomaly_cnts, toSave=False)
-    plot_event_cnts(anomaly_cnts, toSave=False)
+    rs_anomaly_events, rs_anomaly_user_num, rs_total_number_anomaly_events = detect_anomaly(rs_qoeFolder, SLA, qoeType)
+    rs_anomaly_events, rs_anomaly_user_num, rs_total_number_anomaly_events = filter_events(rs_anomaly_events, rs_ts_range)
+    print "QoE based Anomaly detection for CDN: Azure!"
+    print "Total number of users: ", len(rs_anomaly_events.keys())
+    print "Number of anomaly users: ", rs_anomaly_user_num
+    print "Total number of anomaly events: ", rs_total_number_anomaly_events
+    rs_filter_ts_str = ts2timestr(rs_ts_range[0], "%m%d%H%M") + "-" + ts2timestr(rs_ts_range[1], "%m%d%H%M")
+    writeJson(aws_rstsFolder, "anomaly-events-"+rs_filter_ts_str, rs_anomaly_events)
 
-    anomaly_events, anomaly_user_num, total_number_anomaly_events = filter_events(anomaly_events, ts_range)
-    print "Total number of users: " , len(anomaly_events.keys())
-    print "Filtered number of anomaly users: ", anomaly_user_num
-    print "Total number of anomaly events: ", total_number_anomaly_events
 
-    anomaly_cnts = count_events_per_user(anomaly_events)
-    draw_event_cnts(anomaly_cnts, toSave=False)
-    plot_event_cnts(anomaly_cnts, toSave=False)
-
-    filter_ts_str = ts2timestr(ts_range[0]) + "-" + ts2timestr(ts_range[1])
-
-    writeJson(rstsFolder, "anomaly-events-" + filter_ts_str, anomaly_events)
+    aws_anomaly_cnts = count_events_per_user(aws_anomaly_events)
+    azure_anomaly_cnts = count_events_per_user(azure_anomaly_events)
+    rs_anomaly_cnts = count_events_per_user(rs_anomaly_events)
+    fig, ax = plt.subplots()
+    plot_event_cnts_cdf(ax, aws_anomaly_cnts, label="CDN A", lnSty='-b')
+    plot_event_cnts_cdf(ax, azure_anomaly_cnts, label="CDN B", lnSty='--k')
+    plot_event_cnts_cdf(ax, rs_anomaly_cnts, label="CDN C", lnSty=':r')
+    plt.legend(loc=0)
+    plt.show()
+    save_fig(fig, "anomalies_all_CDNs")

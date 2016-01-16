@@ -1,12 +1,11 @@
-import time
 import json
 import os
-import shutil
-import logging
 import socket
-import datetime
+
 import numpy as np
-from get_files import *
+
+from read_data.get_files import *
+
 
 # ================================================================================
 ## Get Client Agent Name

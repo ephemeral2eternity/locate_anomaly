@@ -1,11 +1,5 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import json
-import os
-from utils import *
-from get_files import *
-from matplotlib.backends.backend_pdf import PdfPages
 
+from draw_utils import *
 
 def remove_normal_users(anomaly_cnts):
     updated_anomaly_cnts = {}
@@ -15,19 +9,14 @@ def remove_normal_users(anomaly_cnts):
     return updated_anomaly_cnts
 
 
-def plot_event_cnts(anomaly_cnts, toSave=True, figName="anomaly_cnts_plt"):
-    user_num = len(anomaly_cnts.keys())
-    sorted_cnts = sorted(anomaly_cnts.values(), reverse=True)
+def plot_event_cnts_cdf(ax, anomaly_cnts, toSave=False, figName="anomaly_cnts_plt", label="CDN", lnSty = "-b"):
+    sorted_cnts = sorted(anomaly_cnts.values())
+    yvals = np.arange(len(sorted_cnts))/float(len(sorted_cnts))
 
-    fig, ax = plt.subplots()
-    plt.plot(sorted_cnts, linewidth=1.0)
-    ax.set_xlabel('User ID', fontsize=15)
-    ax.set_ylabel('The number of anomaly events', fontsize=15)
-    fig.tight_layout()
-    plt.show()
-
-    if toSave:
-        save_fig(fig, figName)
+    # fig, ax = plt.subplots()
+    plt.plot(sorted_cnts, yvals, lnSty, linewidth=3.0, label=label)
+    ax.set_ylabel('The percentage of users', fontsize=15)
+    ax.set_xlabel('The number of anomaly events per user', fontsize=15)
 
 
 def draw_event_cnts(anomaly_cnts, toSave=True, figName="anomaly_cnts_bar"):
@@ -98,24 +87,26 @@ def draw_anomaly_location_types(anomaly_locs, toSave=False, figName="anomaly_loc
     if toSave:
         save_fig(fig, figName)
 
-def plot_scatter(x, y):
-    plt.scatter(x, y, alpha=0.5)
-    plt.show()
+
+def draw_anomalies(ax, usr_anomalies, color='r', alpha=0.5):
+    srv_id = 0
+    for srv in usr_anomalies.keys():
+        for event in usr_anomalies[srv]:
+            if event[1] - event[0] < 5:
+                ax.axvspan(event[1] - 5, event[1], facecolor=color, alpha=alpha)
+            else:
+                ax.axvspan(event[0], event[1], facecolor=color, alpha=alpha)
+
+        srv_id += 1
 
 
+def plot_qoe(ax, user_qoes, marker_sty, qoe_lable, color='r'):
+    ## Plot Server QoE Scores
+    sorted_ts = sorted(user_qoes.keys(), key=float)
+    qoe_vals = [user_qoes[cur_ts] for cur_ts in sorted_ts]
+    # ax.scatter(sorted_ts, qoe_vals, marker=marker_sty, c=color, label=qoe_lable, markersize=10)
+    ax.scatter(sorted_ts, qoe_vals, marker=marker_sty, c=color)
 
-def draw_cdf(data, ls, lg):
-    sorted_data = sorted(data)
-    yvals = np.arange(len(sorted_data))/float(len(sorted_data))
-    plt.plot(yvals, sorted_data, ls, label=lg, linewidth=2.0)
-# plt.show()
-
-
-def save_fig(fig, figName):
-    pdf = PdfPages('./imgs/' + figName + '.pdf')
-    pdf.savefig(fig)
-    fig.savefig('./imgs/'+figName+'.png', dpi=300, format='png', bbox_inches='tight')
-    pdf.close()
 
 
 if __name__ == "__main__":

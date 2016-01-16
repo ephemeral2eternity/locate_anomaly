@@ -9,7 +9,7 @@ from time_str import *
 def get_file_ts_by_name(file_name):
     base_file_name = re.sub(r'\.json$', '', file_name)
     f_ts_str = base_file_name.split('_')[-1]
-    f_ts = timestr2utcts(f_ts_str)
+    f_ts = timestr2utcts(f_ts_str, '%m%d%H%M')
     return f_ts
 
 
@@ -21,7 +21,7 @@ def get_file_ts_by_prefix(file_path, file_prefix):
         file_name = re.sub(r'\.json$', '', user_file_name)
         f_ts_str = file_name.split('_')[-1]
         # print f_ts_str
-        f_ts = timestr2utcts(f_ts_str)
+        f_ts = timestr2utcts(f_ts_str, '%m%d%H%M')
         files_ts[f_ts] = user_file_name
     return files_ts
 
@@ -39,7 +39,7 @@ def find_cur_file(file_path, file_prefix, ts):
 
     if selected_file is None:
         print "[Error] No files for prefix: ", file_prefix, " is available before time: ", \
-        datetime.datetime.fromtimestamp(int(ts)).strftime('%Y-%m-%d %H:%M:%S'), ts
+        ts2timestr(ts, '%Y-%m-%d %H:%M:%S')
     # else:
         # print "Find file: ", selected_file
     return selected_file

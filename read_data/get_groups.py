@@ -11,7 +11,7 @@ import re
 import calendar, time, datetime
 from get_clients_info import *
 from get_files import *
-from load_metrics_in_range import *
+from load_metrics import *
 
 
 def get_user_srv(qoe_file_path, given_user, ts):

@@ -1,19 +1,11 @@
 # Locate anomalies via user QoE and their route info
 # Chen Wang, chenw@cmu.edu
 # 2016-01-04
-import glob
-import json
-import os
-import shutil
-import ntpath
-from utils import *
-from get_hops import *
-from ipinfo.host2ip import *
-from ipinfo.ipinfo import *
-from get_groups import *
-from get_files import *
-from get_server import *
-from load_metrics_in_range import *
+from read_data.get_files import *
+from read_data.get_groups import *
+from read_data.get_hops import *
+from read_data.get_server import *
+from read_data.load_metrics import *
 
 
 def check_status(qoe_file, QoE_SLA, ts_range):
@@ -168,13 +160,21 @@ def locate_all_anomaly_events(anomaly_events, qoe_folder, tr_folder, hop_info_fo
 
 if __name__ == "__main__":
     ## Default data folder
-    qoeFolder = "D://Data/cdn-monitor-data/azure-0112/qoe/"
-    trFolder = "D://Data/cdn-monitor-data/azure-0112/tr/"
-    hopinfoFolder = "D://Data/cdn-monitor-data/azure-hops/"
-    anomaly_folder = "D://Data/cdn-monitor-data/azure-0112/anomaly/"
-    anomaly_events_file = "D://Data/cdn-monitor-data/azure-0112/anomaly/anomaly-events-01120400-01120500.json"
+    # qoeFolder = "D://Data/cdn-monitor-data/azure-0112/qoe/"
+    # trFolder = "D://Data/cdn-monitor-data/azure-0112/tr/"
+    # hopinfoFolder = "D://Data/cdn-monitor-data/azure-hops/"
+    # anomaly_folder = "D://Data/cdn-monitor-data/azure-0112/anomaly/"
+    # anomaly_events_file = "D://Data/cdn-monitor-data/azure-0112/anomaly/anomaly-events-01120400-01120500.json"
+
+    qoeFolder = "D://Data/cdn-monitor-data/rs-0113/qoe/"
+    trFolder = "D://Data/cdn-monitor-data/rs-0113/tr/"
+    hopinfoFolder = "D://Data/cdn-monitor-data/rs-hops/"
+    anomaly_folder = "D://Data/cdn-monitor-data/rs-0113/anomaly/"
+    anomaly_events_file = "D://Data/cdn-monitor-data/rs-0113/anomaly/anomaly-events-01131800-01131900.json"
+    anomaly_location_file_name = "anomaly-locations-01131800-01131900"
+
 
     QoE_SLA = 1.0
     anomaly_events = json.load(open(anomaly_events_file))
     all_anomaly_events_locations = locate_all_anomaly_events(anomaly_events, qoeFolder, trFolder, hopinfoFolder, QoE_SLA)
-    writeJson(anomaly_folder, "anomaly-locations-01120400-01120500", all_anomaly_events_locations)
+    writeJson(anomaly_folder, anomaly_location_file_name, all_anomaly_events_locations)
