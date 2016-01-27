@@ -5,8 +5,10 @@ from draws.draw_cdn_metrics import *
 from read_data.load_metrics import *
 
 # users_to_compare = ["pl2.cs.unm.edu", "pl3.cs.unm.edu", "pl4.cs.unm.edu"]
+users_to_compare = ["planetlab4.mini.pw.edu.pl", "planetlab3.mini.pw.edu.pl", "planetlab1.mini.pw.edu.pl", "plab4.ple.silweb.pl"]
 
-users_to_compare = ["planetlab-2.sjtu.edu.cn", "pl2.pku.edu.cn", "pl2.zju.edu.cn"]
+#users_to_compare = ["planetlab-2.sjtu.edu.cn", "pl2.pku.edu.cn", "pl2.zju.edu.cn"]
+
 
 anomaly_events_file = "D://Data/cdn-monitor-data/aws-0109/anomaly/anomaly-events-01090500-01090600.json"
 cdn_log_file = "D://Data/cdn-monitor-data/aws-0109/cdn-logs.json"
@@ -15,8 +17,8 @@ tr_folder = "D://Data/cdn-monitor-data/aws-0109/tr/"
 hops_folder = "D://Data/cdn-monitor-data/aws-hops/"
 
 
-ts_range = [1452317400, 1452318600]
-# ts_range = [1452315600, 1452316800]
+# ts_range = [1452317400, 1452318600]
+ts_range = [1452316000, 1452316400]
 SLA = 1
 route_files = []
 
@@ -70,7 +72,7 @@ ax_list[-1].set_xlabel("Time in a day", fontsize=20)
 red_patch = mpatches.Patch(color='r', label='Anomaly', alpha=0.5)
 plt.legend(handles=[red_patch], loc=(0.8, len(users_to_compare)+0.5))
 plt.show()
-save_fig(fig, "QoE_based_anomaly_detection_aws_0109_user_group2")
+save_fig(fig, "QoE_based_anomaly_detection_aws_0109_user_group_outlier")
 
 
 ## Read the info from the logs file
@@ -80,6 +82,3 @@ plot_response_time(extracted_srv_logs, ts_range, toSave=True, figName="rsp_time_
 plot_cache_miss(extracted_srv_logs, ts_range, toSave=True, figName="cache_miss_aws_0109", label_win=label_win)
 plot_status_code(extracted_srv_logs, ts_range, toSave=True, figName="http_status_aws_0109", label_win=label_win)
 
-#routes = read_route_info(tr_folder, route_files, info_name="Hops")
-#route_graph, srv_nodes, user_nodes = route2graph(routes, hops_folder)
-#draw_network(route_graph, srv_nodes, user_nodes, hops_folder)

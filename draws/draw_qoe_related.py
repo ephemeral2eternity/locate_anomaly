@@ -1,4 +1,3 @@
-
 from draw_utils import *
 
 def remove_normal_users(anomaly_cnts):
@@ -9,14 +8,18 @@ def remove_normal_users(anomaly_cnts):
     return updated_anomaly_cnts
 
 
-def plot_event_cnts_cdf(ax, anomaly_cnts, toSave=False, figName="anomaly_cnts_plt", label="CDN", lnSty = "-b"):
+def plot_event_cnts_cdf(ax, anomaly_cnts, percentile=0.9, toSave=False, figName="anomaly_cnts_plt", label="CDN", lnSty = "-b"):
     sorted_cnts = sorted(anomaly_cnts.values())
     yvals = np.arange(len(sorted_cnts))/float(len(sorted_cnts))
+
+    percentile_user_id = int(len(sorted_cnts) * 0.9)
+    percentile_cnt = sorted_cnts[percentile_user_id]
 
     # fig, ax = plt.subplots()
     plt.plot(sorted_cnts, yvals, lnSty, linewidth=3.0, label=label)
     ax.set_ylabel('The percentage of users', fontsize=15)
     ax.set_xlabel('The number of anomaly events per user', fontsize=15)
+    return percentile_cnt
 
 
 def draw_event_cnts(anomaly_cnts, toSave=True, figName="anomaly_cnts_bar"):
@@ -85,7 +88,7 @@ def draw_anomaly_location_types(anomaly_locs, toSave=False, figName="anomaly_loc
     plt.show()
 
     if toSave:
-        save_fig(fig, figName)
+        save_fig(fig, figName, figFolder="D://GitHub/locate_anomaly/imgs/")
 
 
 def draw_anomalies(ax, usr_anomalies, color='r', alpha=0.5):
@@ -123,14 +126,14 @@ if __name__ == "__main__":
     trace_folder = "D://Data/cdn-monitor-data/aws-0109/tr/"
     anomaly_locations = json.load(open(anomaly_loc_file))
     aws_loc_precision = get_localization_precision(anomaly_locations, trace_folder)
-    draw_anomaly_location_types(anomaly_locations, toSave=False, figName="anomaly_loc_typ_aws_0109")
+    draw_anomaly_location_types(anomaly_locations, toSave=True, figName="anomaly_loc_typ_aws_0109")
 
 
     trace_folder = "D://Data/cdn-monitor-data/azure-0112/tr/"
     anomaly_loc_file = "D://Data/cdn-monitor-data/azure-0112/anomaly/anomaly-locations-01120400-01120500.json"
     anomaly_locations = json.load(open(anomaly_loc_file))
     az_loc_precision = get_localization_precision(anomaly_locations, trace_folder)
-    draw_anomaly_location_types(anomaly_locations, toSave=False, figName="anomaly_loc_typ_azure_0112")
+    draw_anomaly_location_types(anomaly_locations, toSave=True, figName="anomaly_loc_typ_azure_0112")
 
 
     fig, ax = plt.subplots()
@@ -142,7 +145,7 @@ if __name__ == "__main__":
     plt.legend(loc=0)
 
     plt.show()
-    save_fig(fig, "Anomaly_localization_precision_comparison")
+    save_fig(fig, "Anomaly_localization_precision_comparison", figFolder="D://GitHub/locate_anomaly/imgs/")
 
 
     #precision_over_peernum = get_precision_over_peernum(anomaly_locations, trace_folder)

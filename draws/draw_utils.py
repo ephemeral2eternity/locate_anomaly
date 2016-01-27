@@ -17,9 +17,9 @@ def draw_cdf(data, ls, lg):
 # plt.show()
 
 
-def save_fig(fig, figName):
-    pdf = PdfPages('./imgs/' + figName + '.pdf')
+def save_fig(fig, figName, figFolder = "./imgs/"):
+    pdf = PdfPages(figFolder + figName + '.pdf')
     pdf.savefig(fig)
-#    fig.savefig('./imgs/'+figName+'.png', dpi=300, format='png', bbox_inches='tight')
+    fig.savefig(figFolder + figName+'.png', dpi=600, format='png')
     pdf.close()
 

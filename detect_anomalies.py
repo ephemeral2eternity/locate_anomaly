@@ -51,7 +51,8 @@ def detect_anomaly_points(user_qoe, SLA, qoeType):
     anomalies = {}
     chunk_ids = sorted(user_qoe.keys(), key=int)
     ## Ignore the first two chunks that has bad QoE as it is impacted by the startup logic.
-    for ch_id in chunk_ids:
+    # for ch_id in chunk_ids:
+    for ch_id in chunk_ids[5:]:
         ch_qoe = float(user_qoe[ch_id][qoeType])
         ch_srv = user_qoe[ch_id]["Server"]
         if ch_qoe < SLA:
@@ -154,25 +155,38 @@ if __name__ == "__main__":
     print "Number of anomaly users: ", azure_anomaly_user_num
     print "Total number of anomaly events: ", azure_total_number_anomaly_events
     azure_filter_ts_str = ts2timestr(azure_ts_range[0], "%m%d%H%M") + "-" + ts2timestr(azure_ts_range[1], "%m%d%H%M")
-    writeJson(aws_rstsFolder, "anomaly-events-"+azure_filter_ts_str, azure_anomaly_events)
+    writeJson(azure_rstsFolder, "anomaly-events-"+azure_filter_ts_str, azure_anomaly_events)
 
     rs_anomaly_events, rs_anomaly_user_num, rs_total_number_anomaly_events = detect_anomaly(rs_qoeFolder, SLA, qoeType)
     rs_anomaly_events, rs_anomaly_user_num, rs_total_number_anomaly_events = filter_events(rs_anomaly_events, rs_ts_range)
-    print "QoE based Anomaly detection for CDN: Azure!"
+    print "QoE based Anomaly detection for CDN: Rackspace!"
     print "Total number of users: ", len(rs_anomaly_events.keys())
     print "Number of anomaly users: ", rs_anomaly_user_num
     print "Total number of anomaly events: ", rs_total_number_anomaly_events
     rs_filter_ts_str = ts2timestr(rs_ts_range[0], "%m%d%H%M") + "-" + ts2timestr(rs_ts_range[1], "%m%d%H%M")
-    writeJson(aws_rstsFolder, "anomaly-events-"+rs_filter_ts_str, rs_anomaly_events)
+    writeJson(rs_rstsFolder, "anomaly-events-"+rs_filter_ts_str, rs_anomaly_events)
 
 
     aws_anomaly_cnts = count_events_per_user(aws_anomaly_events)
     azure_anomaly_cnts = count_events_per_user(azure_anomaly_events)
     rs_anomaly_cnts = count_events_per_user(rs_anomaly_events)
     fig, ax = plt.subplots()
-    plot_event_cnts_cdf(ax, aws_anomaly_cnts, label="CDN A", lnSty='-b')
-    plot_event_cnts_cdf(ax, azure_anomaly_cnts, label="CDN B", lnSty='--k')
-    plot_event_cnts_cdf(ax, rs_anomaly_cnts, label="CDN C", lnSty=':r')
+    percentile_val = 0.9
+    aws_percentile = plot_event_cnts_cdf(ax, aws_anomaly_cnts, percentile=percentile_val, label="CDN A", lnSty='-b')
+    azure_percentile = plot_event_cnts_cdf(ax, azure_anomaly_cnts, percentile=percentile_val, label="CDN B", lnSty='--k')
+    rs_percentile = plot_event_cnts_cdf(ax, rs_anomaly_cnts, percentile=percentile_val, label="CDN C", lnSty=':r')
+
+    plt.axhline(y=percentile_val, color='r')
+    ax.annotate('90% users', xy=(180, percentile_val), xytext=(180, percentile_val+0.02), xycoords='data', color='r')
+
+    ax.annotate(str(aws_percentile), xy=(aws_percentile, percentile_val), xytext=(aws_percentile+10, percentile_val-0.05), xycoords='data',
+                color='b', arrowprops=dict(arrowstyle="->", color='b'))
+    ax.annotate(str(azure_percentile), xy=(azure_percentile, percentile_val), xytext=(azure_percentile+10, percentile_val-0.10), xycoords='data',
+                color='k', arrowprops=dict(arrowstyle="->", color='k'))
+    ax.annotate(str(rs_percentile), xy=(rs_percentile, percentile_val), xytext=(rs_percentile + 10, percentile_val-0.15), xycoords='data',
+                color='r', arrowprops=dict(arrowstyle="->", color='r'))
+
+
     plt.legend(loc=0)
     plt.show()
     save_fig(fig, "anomalies_all_CDNs")

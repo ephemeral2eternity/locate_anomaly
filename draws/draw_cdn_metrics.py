@@ -59,6 +59,8 @@ def plot_response_time(extracted_srv_logs, ts_range, label_win=60, toSave=False,
 
 def plot_cache_miss(extracted_srv_logs, ts_range, label_win=60, toSave=False, figName="cache_miss"):
     all_ts = sorted(extracted_srv_logs.keys(), key=float)
+    cache_miss = []
+    cache_miss_ts = []
     cache_hit = []
     cache_hit_ts = []
     for ts_str in all_ts:
@@ -67,15 +69,16 @@ def plot_cache_miss(extracted_srv_logs, ts_range, label_win=60, toSave=False, fi
             cache_hit.append(1)
             cache_hit_ts.append(float(ts_str))
         elif cur_cache_miss == "Miss":
-            cache_hit.append(-1)
-            cache_hit_ts.append(float(ts_str))
+            cache_miss.append(-1)
+            cache_miss_ts.append(float(ts_str))
         else:
             print "Unknown cache miss status: ", cur_cache_miss
-            cache_hit.append(0)
-            cache_hit_ts.append(float(ts_str))
+            #cache_hit.append(0)
+            #cache_hit_ts.append(float(ts_str))
 
     fig, ax = plt.subplots()
-    ax.stem(cache_hit_ts, cache_hit, markerfmt='o', c='b', label='Cache Hits/Misses')
+    ax.stem(cache_hit_ts, cache_hit, markerfmt='bo', linefmt='-b', label='Cache Hits')
+    ax.stem(cache_miss_ts, cache_miss, markerfmt='rv', linefmt='--r', label='Cache Misses')
 
     ## Compute the mean response time
     num_intvs = int((ts_range[1] - ts_range[0])/label_win) + 1
@@ -100,29 +103,36 @@ def plot_cache_miss(extracted_srv_logs, ts_range, label_win=60, toSave=False, fi
         save_fig(fig, figName)
 
 def plot_status_code(extracted_srv_logs, ts_range, label_win=60, toSave=False, figName="http_staus"):
+    marker_formats = ['k^', 'bs', 'ro', 'gD', 'm*']
+    line_formats = ['k--', 'b-', 'r-.', 'g-', 'm:']
     all_ts = sorted(extracted_srv_logs.keys(), key=float)
-    http_status_codes = []
-    status_ts = []
+    http_status_codes = {}
+    http_status_codes = {'1XX' : [], '200' : [], '3XX' : [], '4XX' : [], '5XX' : []}
+    status_ts = {'1XX' : [], '200' : [], '3XX' : [], '4XX' : [], '5XX' : []}
     for ts_str in all_ts:
         cur_http_status = extracted_srv_logs[ts_str]["sc-status"]
         if cur_http_status.startswith('1'):
-            http_status_codes.append(1)
-            status_ts.append(float(ts_str))
+            http_status_codes['1XX'].append(1)
+            status_ts['1XX'].append(float(ts_str))
         elif cur_http_status == "200":
-            http_status_codes.append(2)
-            status_ts.append(float(ts_str))
+            http_status_codes['200'].append(2)
+            status_ts['200'].append(float(ts_str))
         elif cur_http_status.startswith('3'):
-            http_status_codes.append(3)
-            status_ts.append(float(ts_str))
+            http_status_codes['3XX'].append(3)
+            status_ts['3XX'].append(float(ts_str))
         elif cur_http_status.startswith('4'):
-            http_status_codes.append(4)
-            status_ts.append(float(ts_str))
+            http_status_codes['4XX'].append(4)
+            status_ts['4XX'].append(float(ts_str))
         elif cur_http_status.startswith('5'):
-            http_status_codes.append(5)
-            status_ts.append(float(ts_str))
+            http_status_codes['5XX'].append(5)
+            status_ts['5XX'].append(float(ts_str))
 
     fig, ax = plt.subplots()
-    ax.stem(status_ts, http_status_codes, markerfmt='o', c='b', label='HTTP Response Status Code')
+    code_id = 0
+    for status_code in http_status_codes.keys():
+        if http_status_codes[status_code]:
+            ax.stem(status_ts[status_code], http_status_codes[status_code], markerfmt=marker_formats[code_id], linefmt=line_formats[code_id], label=status_code)
+        code_id += 1
 
     ## Compute the mean response time
     num_intvs = int((ts_range[1] - ts_range[0])/label_win) + 1

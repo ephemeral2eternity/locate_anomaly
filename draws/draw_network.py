@@ -6,27 +6,15 @@ import copy
 from ipinfo.host2ip import *
 from ipinfo.ipinfo import *
 import networkx as nx
+import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+from draw_utils import *
 # from pylab import *
 
-
-def draw_network(graph_obj, srv_nodes, user_nodes, hopsPath, isLabel=False):
-    pos=nx.spring_layout(graph_obj, k=0.5, iterations=200)
-    all_nodes = graph_obj.nodes()
-    print all_nodes, srv_nodes
-
-    nodesize = {}
-    nodecolor = {}
-    for node in graph_obj.nodes():
-        if node in srv_nodes:
-            nodesize[node] = 200
-            nodecolor[node] = 'b'
-        elif node in user_nodes:
-            nodesize[node] = 200
-            nodecolor[node] = 'g'
-        else:
-            nodesize[node] = 50
-            nodecolor[node] = 'grey'
+def draw_network(graph_obj, srv_nodes, user_nodes, hopsPath, isLabel=False, toSave=False, figName="localization_eg"):
+    # pos=nx.spring_layout(graph_obj, k=0.6, iterations=400)
+    pos = nx.graphviz_layout(graph_obj, prog="neato", args="-Tps -Gsplines=true -Goverlap=scalexy -Gepsilon=5")
+    # pos = nx.graphviz_layout(graph_obj, prog="neato", args="-Tps -Gsplines=true -Goverlap=scalexy -Gepsilon=5")
 
     if isLabel:
         labels = {}
@@ -46,24 +34,93 @@ def draw_network(graph_obj, srv_nodes, user_nodes, hopsPath, isLabel=False):
         nx.draw_networkx_labels(graph_obj, pos=pos_labels, labels=labels, fontsize=2, font_color='k')
 
     #Get all distinct node classes according to the node shape attribute
-    nodeShapes = set((aShape[1]["s"] for aShape in graph_obj.nodes(data = True)))
+    nodeShapes = set((aShape[1]["node_shape"] for aShape in graph_obj.nodes(data = True)))
 
+    f, ax = plt.subplots()
+    p_handlers = {}
     for aShape in nodeShapes:
-        curNodes = [sNode[0] for sNode in filter(lambda x: x[1]["s"] == aShape,graph_obj.nodes(data = True))]
-        nodesizelist = [nodesize[v] for v in curNodes]
-        nodecorlorlist = [nodecolor[v] for v in curNodes]
-        nx.draw_networkx_nodes(graph_obj, pos, node_shape = aShape, nodelist = curNodes, node_size=nodesizelist, node_color=nodecorlorlist, alpha = 0.5)
+        curNodesDict = [sNode for sNode in filter(lambda x: x[1]["node_shape"] == aShape,graph_obj.nodes(data = True))]
+        curNodes = [cNode[0] for cNode in curNodesDict]
+        nodesizelist = [cNode[1]["node_size"] for cNode in curNodesDict]
+        # print nodesizelist
+        nodecolorlist = [cNode[1]["node_color"] for cNode in curNodesDict]
+        # print nodecolorlist
+        p_handlers[aShape] = nx.draw_networkx_nodes(graph_obj, pos, node_shape = aShape, nodelist=curNodes, node_size=nodesizelist, node_color=nodecolorlist, alpha = 0.5)
+        # nx.draw_networkx_nodes(graph_obj, pos, node_shape=aShape, nodelist=curNodes, alpha = 0.5)
 
-    nx.draw_networkx_edges(graph_obj, pos, edge_color='k')
+    edge_colors = [curEdge[2]["edge_color"] for curEdge in graph_obj.edges(data = True)]
+    nx.draw_networkx_edges(graph_obj, pos, edge_color=edge_colors)
+    # nx.draw_networkx_edges(graph_obj, pos)
+    # print graph_obj.edges(data = True)
 
-    #p1 = Circle((0, 0), fc="b")
-    #p2 = Circle((0, 0), fc="g")
-    #p3 = Circle((0, 0), fc="grey")
-    #plt.legend([p1,p2,p3], ["Server","Client","Router"])
+    red_patch = mpatches.Patch(color='r', label='Anomaly', alpha=0.5)
+    green_patch = mpatches.Patch(color='g', label='Normal', alpha=0.5)
+    p_lg = [p_handlers[x] for x in ['^', 'o', 's']]
+    p_lg.append(green_patch)
+    p_lg.append(red_patch)
+    plt.legend(p_lg, ["Clients","Routers", "Servers", "Normal", "Anomaly"], loc=4)
+    plt.axis('off')
     plt.show()
+
+    if toSave:
+        save_fig(f, figName)
 
 # def read_routes():
 #    return
+def color_graph(route_graph, routes, users_status, hops_folder, anomaly_user=None):
+    node_status = {}
+    for user in routes.keys():
+        cur_user_routes = routes[user]
+        for srv in cur_user_routes.keys():
+            print "Color route from ", user, " to server:", srv
+            cur_route = cur_user_routes[srv]
+            cur_clean_route = simplify_route(cur_route, user, srv, hops_folder)
+            if srv not in users_status[user].keys():
+                continue
+            cur_route_status = users_status[user][srv]
+
+            route_ids = sorted(cur_clean_route.keys(), key=int)
+
+            '''
+            client_node = cur_clean_route[route_ids[0]]
+            if client_node in node_status.keys():
+                node_status[client_node] = cur_route_status & node_status[client_node]
+            else:
+                node_status[client_node] = cur_route_status
+            '''
+
+            for cur_id in route_ids:
+                cur_node = cur_clean_route[cur_id]
+                if cur_node in node_status.keys():
+                    node_status[cur_node] = cur_route_status | node_status[cur_node]
+                else:
+                    node_status[cur_node] = cur_route_status
+
+    node_colors = {}
+    for node in node_status.keys():
+        if node_status[node]:
+            node_colors[node] = 'g'
+        else:
+            node_colors[node] = 'r'
+            print node
+
+    if anomaly_user:
+        anomaly_user_ip = host2ip(anomaly_user)
+        node_colors[anomaly_user_ip] = 'r'
+
+    edge_colors = {}
+    for (u, v) in route_graph.edges():
+        cur_edge = (u, v)
+        if node_status[u] and node_status[v]:
+            edge_colors[cur_edge] = 'g'
+        else:
+            edge_colors[cur_edge] = 'r'
+
+    nx.set_node_attributes(route_graph, "node_color", node_colors)
+    nx.set_edge_attributes(route_graph, "edge_color", edge_colors)
+
+    return route_graph
+
 
 def simplify_route(cur_route, user, srv, hops_folder):
     updated_route = {}
@@ -102,7 +159,7 @@ def simplify_route(cur_route, user, srv, hops_folder):
     return updated_route
 
 
-def route2graph(user_routes, hops_folder):
+def route2graph(user_routes, hops_folder, route_status=None):
     users = user_routes.keys()
     route_graph = nx.Graph()
     srv_nodes = []
@@ -117,6 +174,11 @@ def route2graph(user_routes, hops_folder):
             user_nodes.append(user_ip)
 
         for srv in cur_user_routes.keys():
+            if route_status:
+                if srv not in route_status[user].keys():
+                    continue
+
+            # print user, srv
             if is_ip(srv):
                 srv_ip = srv
             else:
@@ -127,27 +189,20 @@ def route2graph(user_routes, hops_folder):
 
             cur_route = cur_user_routes[srv]
             cur_clean_route = simplify_route(cur_route, user, srv, hops_folder)
-            # print cur_clean_route
+            print cur_clean_route
             route_ids = sorted(cur_clean_route.keys(), key=int)
             pre_node = cur_clean_route[route_ids[0]]
-            route_graph.add_node(pre_node, s='^')
+            route_graph.add_node(pre_node, node_shape='^', node_size=200, node_color='m')
             for cur_id in route_ids[1:]:
                 cur_node = cur_clean_route[cur_id]
                 if cur_node == srv_ip:
-                    route_graph.add_node(cur_node, s='s')
+                    route_graph.add_node(cur_node, node_shape='s', node_size=300, node_color='b')
                 else:
-                    route_graph.add_node(cur_node, s='o')
-                route_graph.add_edge(pre_node, cur_node)
+                    route_graph.add_node(cur_node, node_shape='o', node_size=50, node_color='grey')
+
+                cur_edge = sorted([pre_node, cur_node])
+                route_graph.add_edge(cur_edge[0], cur_edge[1], edge_color='k')
                 pre_node = cur_node
-
-    '''
-    print "The whole graph is:"
-    for (u, v) in route_graph.edges():
-        print '(%s, %s)' % (u, v)
-
-    for node in route_graph.nodes():
-        print "Node:", node
-    '''
 
     return route_graph, srv_nodes, user_nodes
 
@@ -202,7 +257,6 @@ def user_info_selection(all_user_info, users_to_select):
         selected_user_info[user] = copy.deepcopy(all_user_info[user])
 
     return selected_user_info
-
 
 
 def remove_nodes(org_list, nodes_to_remove):

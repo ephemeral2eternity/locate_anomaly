@@ -7,7 +7,6 @@ from read_data.get_hops import *
 from read_data.get_server import *
 from read_data.load_metrics import *
 
-
 def check_status(qoe_file, QoE_SLA, ts_range):
     srv_qoes = load_srv_qoe_in_range(qoe_file, ts_range)
     srvs_status = {}
@@ -26,18 +25,27 @@ def check_status(qoe_file, QoE_SLA, ts_range):
     return srvs_status
 
 
+def merge_routes(total_routes, new_route_dict):
+    total_routes_srvs = total_routes.keys()
+    for srv in new_route_dict.keys():
+        total_routes[srv] = copy.deepcopy(new_route_dict[srv])
+    return total_routes
+
+
 def label_route(tr_folder, peer, srv, ts_range):
     normal_hops = {}
-    route_file = find_cur_file(tr_folder, "TR_" + peer, ts_range[1])
-    route_dict = json.load(open(tr_folder + route_file))
-    route = route_dict[srv]['Hops']
+    total_route_dict = {}
+    route_files = find_files_in_range(tr_folder, "TR_" + peer, ts_range)
+    for route_file in route_files:
+        route_dict = json.load(open(tr_folder + route_file))
+        total_route_dict = merge_routes(total_route_dict, route_dict)
+
+    route = total_route_dict[srv]['Hops']
     hop_ids = sorted(route.keys(), key=int)
     for i in hop_ids:
         hop_ip = route[i]['IP']
         if (is_ip(hop_ip)) and (not is_reserved(hop_ip)) and (hop_ip not in normal_hops.keys()):
             normal_hops[hop_ip] = [peer]
-            # if peer not in normal_hops[hop_ip]:
-            #    normal_hops[hop_ip].append(peer)
 
     if srv not in normal_hops.keys():
         normal_hops[srv] = [peer]
@@ -150,7 +158,7 @@ def locate_all_anomaly_events(anomaly_events, qoe_folder, tr_folder, hop_info_fo
 
                 first_mile_peers = get_first_mile_peers(qoe_folder, user, srv, anomaly_ts_range)
                 all_peers = list(set(first_mile_peers) | set(last_mile_peers))
-                print "Number of peers for localization: ", len(all_peers)
+                print "Number of peers for localization: ", len(all_peers), "Peers: ", all_peers
                 locations, normal_hop_details, precision = locate_anomaly(user, srv, anomaly_ts_range, all_peers, qoe_folder, tr_folder, hop_info_folder, QoE_SLA, search_win)
                 total_event_id += 1
                 anomaly_locations[total_event_id] = {'user' : user, 'server' : srv, 'duration' : anomaly_ts_range, 'anomaly-hops' : locations,
@@ -159,20 +167,30 @@ def locate_all_anomaly_events(anomaly_events, qoe_folder, tr_folder, hop_info_fo
     return anomaly_locations
 
 if __name__ == "__main__":
-    ## Default data folder
-    # qoeFolder = "D://Data/cdn-monitor-data/azure-0112/qoe/"
-    # trFolder = "D://Data/cdn-monitor-data/azure-0112/tr/"
-    # hopinfoFolder = "D://Data/cdn-monitor-data/azure-hops/"
-    # anomaly_folder = "D://Data/cdn-monitor-data/azure-0112/anomaly/"
-    # anomaly_events_file = "D://Data/cdn-monitor-data/azure-0112/anomaly/anomaly-events-01120400-01120500.json"
+    qoeFolder = "D://Data/cdn-monitor-data/aws-0109/qoe/"
+    trFolder = "D://Data/cdn-monitor-data/aws-0109/tr/"
+    hopinfoFolder = "D://Data/cdn-monitor-data/aws-hops/"
+    anomaly_folder = "D://Data/cdn-monitor-data/aws-0109/anomaly/"
+    anomaly_events_file = "D://Data/cdn-monitor-data/aws-0109/anomaly/anomaly-events-01090500-01090600.json"
+    anomaly_location_file_name = "anomaly-locations-01090500-01090600"
+    '''
 
+    ## Default data folder
+    qoeFolder = "D://Data/cdn-monitor-data/azure-0112/qoe/"
+    trFolder = "D://Data/cdn-monitor-data/azure-0112/tr/"
+    hopinfoFolder = "D://Data/cdn-monitor-data/azure-hops/"
+    anomaly_folder = "D://Data/cdn-monitor-data/azure-0112/anomaly/"
+    anomaly_events_file = "D://Data/cdn-monitor-data/azure-0112/anomaly/anomaly-events-01120400-01120500.json"
+    anomaly_location_file_name = "anomaly-locations-01120400-01120500"
+    '''
+    '''
     qoeFolder = "D://Data/cdn-monitor-data/rs-0113/qoe/"
     trFolder = "D://Data/cdn-monitor-data/rs-0113/tr/"
     hopinfoFolder = "D://Data/cdn-monitor-data/rs-hops/"
     anomaly_folder = "D://Data/cdn-monitor-data/rs-0113/anomaly/"
     anomaly_events_file = "D://Data/cdn-monitor-data/rs-0113/anomaly/anomaly-events-01131800-01131900.json"
     anomaly_location_file_name = "anomaly-locations-01131800-01131900"
-
+    '''
 
     QoE_SLA = 1.0
     anomaly_events = json.load(open(anomaly_events_file))
